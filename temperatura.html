@@ -3,153 +3,275 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Komfortowa temperatura — Loxone | InstalSmart</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Instalacje WOD-KAN | InstalSmart</title>
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+
   <style>
-    @media (max-width: 768px) {
-    .feature-detail,
-    .mode-block {
-        grid-template-columns: 1fr !important;
-        text-align: center;
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      color: #222;
+      line-height: 1.6;
+      background: #f8f9fa;
     }
 
-    .feature-detail .image-content,
-    .mode-block .mode-image {
-        order: 1;
-        margin-top: 20px;
+    .container {
+      width: min(1200px, 90%);
+      margin: 0 auto;
     }
 
-    .mode-block .mode-text {
-        text-align: center;
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
     }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: -2;
     }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    /* TREŚĆ GŁÓWNA */
+    main {
+      padding: 3rem 0;
+      background: white;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* SEKCJA WPROWADZENIA */
+    .intro {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    /* GRID KAFELKÓW */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: #007bff;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    .card p {
+      flex-grow: 1;
+      text-align: justify;
+    }
+
+    /* LISTA ZALET */
+    .about-quality {
+      margin-top: 3rem;
+    }
+
+    .about-quality ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .about-quality li {
+      background: #eef3f9;
+      border-left: 4px solid #007bff;
+      margin: 0.7rem 0;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+    }
+
+    /* CTA */
+    .cta {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta .btn {
+      background: white;
+      color: #007bff;
+    }
+
+    .cta .btn:hover {
+      background: #e8e8e8;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+    }
+    
   </style>
 </head>
 <body>
 
 <header id="site-header"></header>
 
+<!-- Sekcja hero -->
 <section class="hero">
-  <img src="images/hero-temperatura.jpg" alt="Komfortowa temperatura Loxone" class="hero-img">
+  <img src="images/wod-kan2.jpg" alt="Instalacje wodno-kanalizacyjne" class="hero-img">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Komfortowa temperatura z Loxone</h1>
-    <p>Automatyczne ogrzewanie, chłodzenie i wentylacja — idealny klimat o każdej porze dnia.</p>
+    <h1>Instalacje WOD-KAN w wysokim standardzie</h1>
+    <p>Kompleksowe wykonanie instalacji wodno-kanalizacyjnych — z dbałością o detale, komfort użytkowników i wysoką efektywność energetyczną. Doradzamy, dobieramy i montujemy systemy dopasowane do Twoich potrzeb.</p>
+    <a class="btn" href="kontakt.html">Skontaktuj się z nami</a>
   </div>
 </section>
 
+<!-- Główna treść -->
 <main class="main-content container">
-  <section class="feature-detail" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 30px;">
-
-    <div class="text-content">
-      <p>
-        Komfort cieplny ma kluczowe znaczenie dla samopoczucia i efektywności w codziennym życiu. System Loxone zapewnia idealną temperaturę w każdym pomieszczeniu — całkowicie automatycznie.
-      </p>
-
-      <p>
-        Inteligentne sterowanie ogrzewaniem, chłodzeniem i wentylacją pozwala utrzymać stały, przyjemny klimat przy jednoczesnym minimalnym zużyciu energii.
-      </p>
-
-      <h3>Najważniejsze funkcje zarządzania temperaturą z Loxone:</h3>
-      <ul class="checklist">
-        <li>Indywidualne sterowanie temperaturą w każdym pomieszczeniu</li>
-        <li>Automatyczne dostosowanie do pory dnia i obecności domowników</li>
-        <li>Integracja ogrzewania podłogowego, grzejników, klimatyzacji i wentylacji</li>
-        <li>Oszczędność energii dzięki inteligentnym algorytmom</li>
-        <li>Czujniki awarii</li>
-        <li>Tryby: Komfort, Eco, Wakacje i inne</li>
-      </ul>
-
-      <p style="color:gray"><strong>Wskazówka:</strong> System Loxone współpracuje z wieloma źródłami ciepła — od pomp ciepła po kotły gazowe i systemy wentylacji z rekuperacją.</p>
-    </div>
-
-    <div class="image-content" style="text-align:center;">
-      <img src="images/panel-temperatura.webp" alt="Panel temperatury Loxone" style="max-width:480px; width:100%; border-radius:20px; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
-    </div>
-
+  
+  <section class="intro">
+    <h2>Nowoczesne instalacje wodno-kanalizacyjne</h2>
+    <p>InstalSmart to zespół specjalistów, którzy od lat zajmują się projektowaniem i montażem instalacji wodnych oraz kanalizacyjnych — zarówno w budynkach jednorodzinnych, jak i w obiektach przemysłowych. Każde zlecenie traktujemy indywidualnie, dbając o trwałość, estetykę i energooszczędność systemu.</p>
+    <p>Dzięki doświadczeniu i nowoczesnym technologiom gwarantujemy wykonanie instalacji o najwyższej jakości — od przyłącza po końcowy montaż armatury.</p>
   </section>
 
-  <!-- Sekcje o trybach i funkcjach -->
-  <section class="light-modes" style="display: grid; gap: 50px; margin-top: 40px;">
+  <!-- Kafelki -->
+  <section class="service-details">
+    <h2>Nasze usługi wodno-kanalizacyjne</h2>
+    <div class="grid">
 
-  <div class="mode-block" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 20px;">
-    <div class="mode-text">
-      <h3>Idealny klimat o każdej porze dnia</h3>
-      <p>Dzięki inteligentnym harmonogramom Loxone dostosowuje temperaturę do Twojego rytmu dnia. Rano w sypialni będzie przyjemnie ciepło, a w ciągu dnia w salonie — optymalnie chłodno. System sam reaguje na zmiany pogody i obecność domowników.</p>
+      <div class="card">
+        <img src="images/wod-kan.webp" alt="Doradztwo instalacyjne">
+        <h3>Doradztwo techniczne</h3>
+        <p>Pomagamy dobrać odpowiednie materiały, średnice rur i technologie montażu. Doradzamy w zakresie prowadzenia instalacji w budynkach energooszczędnych i pasywnych, a także przy wyborze armatury — od baterii po stelaże podtynkowe.</p>
+        <p>Stawiamy na praktyczne rozwiązania, które ułatwiają montaż, zwiększają trwałość systemu i zapewniają bezawaryjną eksploatację przez wiele lat.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/wod-kan.webp" alt="Wykonanie instalacji wod-kan">
+        <h3>Profesjonalny montaż</h3>
+        <p>Wykonujemy instalacje zgodnie z normami i najnowszymi wytycznymi branżowymi. Nasze zespoły dbają o każdy szczegół – od poprawnego spadku rur po estetyczne prowadzenie przewodów w ścianach i posadzkach.</p>
+        <p>Oferujemy nowoczesne rozwiązania izolacyjne i prowadzenie rur w warstwach ocieplenia, co zmniejsza straty energii i podnosi komfort użytkowania.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/wod-kan.webp" alt="Nowoczesne systemy wod-kan">
+        <h3>Nowoczesne rozwiązania</h3>
+        <p>Projektujemy i montujemy systemy współpracujące z odnawialnymi źródłami energii — np. z pompami ciepła, rekuperacją i kolektorami słonecznymi. Dzięki temu Twoja instalacja jest ekologiczna, oszczędna i gotowa na przyszłość.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/wod-kan.webp" alt="Systemy kanalizacyjne">
+        <h3>Kanalizacja niskoszumowa</h3>
+        <p>Oferujemy wykonanie instalacji kanalizacyjnych z systemów o podwyższonym komforcie akustycznym. Dzięki zastosowaniu rur niskoszumowych zapewniamy cichą i bezawaryjną pracę kanalizacji, nawet w budynkach o wysokim standardzie wykończenia.</p>
+      </div>
+
     </div>
-    <div class="mode-image" style="text-align:center;">
-      <img src="images/cieplo-klimat.jpg" alt="Domowy klimat" style="max-width:400px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-    </div>
-  </div>
+  </section>
 
-  <div class="mode-block" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 20px;">
-  <div class="mode-image" style="text-align:center;">
-    <img src="images/automat-temp.jpg" alt="System uczący się rytmu dnia" style="max-width:450px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-  </div>
-  <div class="mode-text">
-    <h3>Nauczy się Twojego dziennego rytmu</h3>
-    <p>
-      System sterowania ogrzewaniem Loxone nieustannie analizuje Twój rytm dnia i nawyki cieplne. 
-      Dzięki temu wie dokładnie, kiedy rozpocząć ogrzewanie, aby w danym pomieszczeniu panowała idealna temperatura 
-      o wybranej porze. Wystarczy raz ustawić preferowane wartości, a system automatycznie dopasuje harmonogram 
-      do Twojego trybu życia — nawet wtedy, gdy plan dnia się zmienia.
-    </p>
-  </div>
-</div>
+  <section class="about-quality">
+    <h2>Dlaczego warto wybrać InstalSmart?</h2>
+    <ul>
+      <li><strong>Wysoki standard wykonania</strong> – dokładność i estetyka są dla nas równie ważne jak funkcjonalność.</li>
+      <li><strong>Doradztwo na każdym etapie</strong> – od projektu po końcowy odbiór instalacji, służymy wsparciem technicznym.</li>
+      <li><strong>Rozwiązania energooszczędne</strong> – stawiamy na systemy przyjazne środowisku i portfelowi inwestora.</li>
+      <li><strong>Materiały najwyższej jakości</strong> – korzystamy z komponentów renomowanych producentów.</li>
+    </ul>
+  </section>
 
-  <img src="images/sparator-cieplo.jpg" alt="Separator" style="width:100%; display:block; margin:0; margin-top:40px; margin-bottom:40px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-
-  <hr>
-
-  <h2 style="margin-bottom: 0px;">Inteligentne sterowanie i automatyzacja</h2>
-  <p style="margin-top: 0px;">System Loxone pozwala na elastyczne i inteligentne sterowanie temperaturą — zarówno ręcznie, jak i w pełni automatycznie. Dzięki aplikacji, czujnikom i harmonogramom zyskujesz pełną kontrolę nad komfortem cieplnym.</p>
-  <hr>
-
-  <div class="mode-block" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 20px;">
-    <div class="mode-image" style="text-align:center;">
-      <img src="images/panel-cieplo.png" alt="Panel Loxone Touch" style="max-width:250px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-    </div>
-    <div class="mode-text">
-      <h3>Sterowanie to zaledwie początek</h3>
-      <p>
-
-        Przyciski Loxone Touch są podstawą zrównoważonej kontroli klimatu. Zintegrowane czujniki mierzą temperaturę, poziom CO2 i wilgotność oraz dostarczają te dane do inteligentnego systemu sterowania HVAC. Nie musisz dodatkowo płacić za termostat na ścianie.
-        Przyciski Loxone Touch.</p>
-    </div>
-  </div>
-
-  <div class="mode-block" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 20px;">
-    <div class="mode-text">
-      <h3>Automatyczne ogrzewanie i chłodzenie</h3>
-      <p>Loxone dynamicznie steruje ogrzewaniem, chłodzeniem i wentylacją w zależności od temperatury zewnętrznej, nasłonecznienia i obecności domowników. Dzięki temu utrzymuje idealny klimat przy minimalnym zużyciu energii.</p>
-    </div>
-    <div class="mode-image" style="text-align:center;">
-      <img src="images/pokoj-temp.jpg" alt="Automatyczne sterowanie" style="max-width:450px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-    </div>
-  </div>
-
-  <div class="mode-block" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 20px; margin-bottom: 60px; margin-top: 40px;">
-    <div class="mode-image" style="text-align:center;">
-      <img src="images/telefon-temp.png" alt="Aplikacja Loxone" style="max-width:250px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-    </div>
-    <div class="mode-text">
-      <h3>Pełna kontrola z aplikacji</h3>
-      <p>Z poziomu aplikacji Loxone możesz sprawdzać temperaturę w każdym pomieszczeniu, zmieniać tryby pracy lub ustawiać harmonogramy. Wszystko dostępne zdalnie — z telefonu, tabletu lub komputera.</p>
-    </div>
-  </div>
-
-</section>
-
-  <!-- CTA -->
   <section class="cta">
-    <h2>Chcesz mieć idealną temperaturę bez wysiłku?</h2>
-    <p>Skontaktuj się z nami i dowiedz się, jak Loxone może zadbać o Twój komfort cieplny.</p>
-    <a class="btn" style="background-color: #2f9e44;" href="kontakt.html">Zapytaj o ofertę</a>
+    <h2>Rozpocznij współpracę z InstalSmart</h2>
+    <p>Planujesz budowę lub modernizację instalacji wodno-kanalizacyjnej? Skontaktuj się z nami — doradzimy, zaprojektujemy i wykonamy system w najwyższym standardzie.</p>
+    <a class="btn" href="kontakt.html">Skontaktuj się</a>
   </section>
 </main>
 
 <footer id="site-footer"></footer>
+
 <script src="script.js"></script>
 </body>
 </html>

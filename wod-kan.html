@@ -4,55 +4,355 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Instalacje WOD-KAN | InstalSmart</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      color: #222;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+
+    .container {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1f7bde;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #004896;
+    }
+
+    main {
+      padding: 3rem 0;
+      background: white;
+      margin-top: 0; /* usunięty negatywny margin */
+      position: relative;
+      z-index: 3;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      justify-content: flex-start;
+      padding-bottom: 60px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: #1f7bde;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    .card p {
+      flex-grow: 1;
+      text-align: left; /* zamiast justify */
+    }
+
+    .about-quality {
+      margin-top: 3rem;
+    }
+
+    .about-quality ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .about-quality li {
+      background: #eef3f9;
+      border-left: 4px solid #1f7bde;
+      margin: 0.7rem 0;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+    }
+
+    .cta {
+      background: #1f7bde;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta .btn {
+      background: white;
+      color: #267ddb;
+    }
+
+    .cta .btn:hover {
+      background: #e8e8e8;
+    }
+
+    #site-footer {
+      background: #e9ecef;
+      color: #333;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 60px;
+      font-size: 14px;
+      border-top: 1px solid #d0d3d6;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <div id="site-header"></div>
 
-  <section class="hero">
-    <img src="images/wod-kan2.jpg" alt="Instalacje wodno-kanalizacyjne" class="hero-img">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Instalacje WOD-KAN</h1>
-      <p>Kompleksowe instalacje wodno-kanalizacyjne dla domów i obiektów przemysłowych — projekt, montaż i serwis.</p>
-      <a class="btn" href="kontakt.html">Skontaktuj się</a>
+<header id="site-header"></header>
+
+<section class="hero">
+  <img src="images/wod-kan2.jpg" alt="Instalacje wodno-kanalizacyjne" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Instalacje WOD-KAN w wysokim standardzie</h1>
+    <p>Kompleksowe wykonanie instalacji wodno-kanalizacyjnych — z dbałością o detale, komfort użytkowników i wysoką efektywność energetyczną. Doradzamy, dobieramy i montujemy systemy dopasowane do Twoich potrzeb.</p>
+    <a class="btn" href="kontakt.html">Skontaktuj się z nami</a>
+  </div>
+</section>
+
+<main class="main-content container">
+  <section class="intro">
+    <h2>Nowoczesne instalacje wodno-kanalizacyjne</h2>
+    <p>InstalSmart to profesjonalna firma, która od lat zajmuje się projektowaniem i montażem instalacji wodnych oraz kanalizacyjnych — zarówno w budynkach jednorodzinnych, jak i w obiektach przemysłowych. Każde zlecenie traktujemy indywidualnie, dbając o trwałość, estetykę i energooszczędność systemu.</p>
+    <p>Dzięki doświadczeniu i nowoczesnym technologiom gwarantujemy wykonanie instalacji o najwyższej jakości — od przyłącza po końcowy montaż armatury.</p>
+  </section>
+
+  <section class="service-details">
+    <h2>Nasze usługi wodno-kanalizacyjne</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/doradztwo.jpg" alt="Doradztwo instalacyjne">
+        <h3>Doradztwo techniczne</h3>
+        <p>Pomagamy dobrać odpowiednie materiały, średnice rur i technologie montażu. Doradzamy w zakresie prowadzenia instalacji w budynkach energooszczędnych i pasywnych, a także przy wyborze armatury — od baterii po stelaże podtynkowe.</p>
+        <p>Stawiamy na praktyczne rozwiązania, które ułatwiają montaż, zwiększają trwałość systemu i zapewniają bezawaryjną eksploatację przez wiele lat.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/instalacja-wod-kan.webp" alt="Wykonanie instalacji wod-kan">
+        <h3>Profesjonalny montaż</h3>
+        <p>Wykonujemy instalacje zgodnie z normami i najnowszymi wytycznymi branżowymi. Dbamy o każdy szczegół – od poprawnego spadku rur po estetyczne prowadzenie przewodów w ścianach i posadzkach.</p>
+        <p>Oferujemy nowoczesne rozwiązania izolacyjne i prowadzenie rur w warstwach ocieplenia, co zmniejsza straty energii i podnosi komfort użytkowania.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/nowoczesne-rury.jpg" alt="Nowoczesne systemy wod-kan">
+        <h3>Nowoczesne rozwiązania</h3>
+        <p>Projektujemy i montujemy systemy współpracujące z odnawialnymi źródłami energii — np. z pompami ciepła, rekuperacją i kolektorami słonecznymi. Dzięki temu Twoja instalacja jest ekologiczna, oszczędna i gotowa na przyszłość.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/kanalizacja-niskoszumowa.avif" alt="Systemy kanalizacyjne">
+        <h3>Kanalizacja niskoszumowa</h3>
+        <p>Oferujemy wykonanie instalacji kanalizacyjnych z systemów o podwyższonym komforcie akustycznym. Dzięki zastosowaniu rur niskoszumowych zapewniamy cichą i bezawaryjną pracę kanalizacji, nawet w budynkach o wysokim standardzie wykończenia.</p>
+      </div>
     </div>
   </section>
 
-  <main class="main-content container">
-    <section class="service-details">
-      <h2>Nasze usługi wodno-kanalizacyjne</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="images/wod-kan.webp" alt="Projekt instalacji WOD-KAN" class="placeholder-img" data-alt="Projekt instalacji WOD-KAN">
-          <h3>Projekt instalacji</h3>
-          <p>Indywidualny projekt dopasowany do Twojego domu lub obiektu przemysłowego.</p>
-        </div>
+  <section class="about-quality">
+    <h2>Dlaczego warto wybrać InstalSmart?</h2>
+    <ul>
+      <li><strong>Wysoki standard wykonania</strong> – dokładność i estetyka są dla nas równie ważne jak funkcjonalność.</li>
+      <li><strong>Doradztwo na każdym etapie</strong> – od projektu po końcowy odbiór instalacji, służymy wsparciem technicznym.</li>
+      <li><strong>Rozwiązania energooszczędne</strong> – stawiamy na systemy przyjazne środowisku i portfelowi inwestora.</li>
+      <li><strong>Materiały najwyższej jakości</strong> – korzystamy z komponentów renomowanych producentów.</li>
+    </ul>
+  </section>
 
-        <div class="card">
-          <img src="images/wod-kan.webp" alt="Montaż instalacji wodno-kanalizacyjnej" class="placeholder-img" data-alt="Montaż instalacji wodno-kanalizacyjnej">
-          <h3>Montaż instalacji</h3>
-          <p>Profesjonalny montaż instalacji wodnej i kanalizacyjnej zgodnie z normami.</p>
-        </div>
+  <section class="cta">
+    <h2>Rozpocznij współpracę z InstalSmart</h2>
+    <p>Planujesz budowę lub modernizację instalacji wodno-kanalizacyjnej? Skontaktuj się z nami — doradzimy i wykonamy system w najwyższym standardzie.</p>
+    <a class="btn" href="kontakt.html">Skontaktuj się</a>
+  </section>
+</main>
 
-        <div class="card">
-          <img src="images/wod-kan.webp" alt="Serwis i konserwacja instalacji WOD-KAN" class="placeholder-img" data-alt="Serwis i konserwacja instalacji WOD-KAN">
-          <h3>Serwis i konserwacja</h3>
-          <p>Regularne przeglądy i szybkie naprawy, aby system działał bezawaryjnie.</p>
-        </div>
+<footer id="site-footer"></footer>
+
+<script>
+(function(){
+  const headerHTML = `
+  <div class="header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="" class="logo">
+        <span>InstalSmart</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Strona główna</a>
+        <a id="loxonene" href="loxone.html">Loxone</a>
+        <a href="wod-kan.html">WOD-KAN</a>
+        <a href="gaz.html">GAZ</a>
+        <a href="pompy.html">Pompy</a>
+        <a href="klimatyzacja.html">Klimatyzacja</a>
+        <a href="realizacje.html">Realizacje</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-meta">
+        <a href="https://www.google.com/maps?q=Mucharz+414+34-106" target="_blank" rel="noopener" class="meta-link">
+          📍 Mucharz 414
+        </a>
+        <a href="mailto:piotrtargosz15@gmail.com" class="meta-link">
+          ✉️ piotrtargosz15@gmail.com
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61571637170536&sk=about" target="_blank" rel="noopener" aria-label="Facebook" class="facebook-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 
+            23.405.595 24 1.325 24H12.82v-9.294H9.692V11.29h3.128V8.413c0-3.1 
+            1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24h-1.92c-1.506 
+            0-1.797.717-1.797 1.77v2.312h3.588l-.467 3.416h-3.121V24h6.117C23.406 
+            24 24 23.405 24 22.674V1.326C24 .594 23.406 0 22.675 0z"/>
+          </svg>
+        </a>
       </div>
-    </section>
 
-    <section class="cta">
-      <h2>Rozpocznij projekt z InstalSmart</h2>
-      <p>Masz projekt wodno-kanalizacyjny? Skontaktuj się z nami!</p>
-      <a class="btn" href="kontakt.html">Kontakt</a>
-    </section>
-  </main>
+      <button class="hamburger" aria-label="menu">☰</button>
+    </div>
+  </div>`;
 
-  <div id="site-footer" class="footer-placeholder"></div>
+  const footerHTML = `
+  <div class="footer">
+    <div class="container">
+      <p>© ${new Date().getFullYear()} InstalSmart — Wszystkie prawa zastrzeżone</p>
+      <p class="muted">Mucharz 414 34-106 • NIP - 5512668896 • tel. +48 535 150 597</p>
+    </div>
+  </div>`;
 
-  <script src="script.js"></script>
+  const siteHeader = document.getElementById('site-header');
+  const siteFooter = document.getElementById('site-footer');
+
+  if(siteHeader) siteHeader.insertAdjacentHTML('afterbegin', headerHTML);
+  if(siteFooter) siteFooter.innerHTML = footerHTML;
+
+  const hh = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  hh?.addEventListener('click', ()=>{
+    if(!nav) return;
+    const visible = nav.style.display === 'flex';
+    nav.style.display = visible ? 'none':'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.background = '#fff';
+    nav.style.position = 'absolute';
+    nav.style.right = '20px';
+    nav.style.top = '60px';
+    nav.style.boxShadow = '0 6px 18px rgba(0,0,0,.08)';
+  });
+})();
+</script>
 </body>
 </html>

@@ -6,6 +6,87 @@
   <title>Klimatyzacja | InstalSmart</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <style>
+    .advanced-services {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .advanced-services h2 {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .tile {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .tile h3 {
+      font-size: 1.25em;
+      margin-bottom: 15px;
+      color: #1f7bde;
+      text-shadow: #aeaeae 2px 2px 3px;
+    }
+
+    .tile p {
+      font-size: 1em;
+      color: #555;
+    }
+    .card-image-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background-color: #d4d0d0;
+  width: 100%; /* domyślnie pełna szerokość kontenera */
+  max-width: 400px; /* opcjonalnie ograniczenie szerokości dla dużych ekranów */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* gradient winiety */
+.card-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(75, 75, 75, 0) 70%, rgba(94, 94, 94, 0.5) 100%);
+  pointer-events: none;
+}
+
+/* obrazek w środku */
+.card-image-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+/* responsywność: gdy ekran < 768px, szerokość 60% */
+@media (max-width: 768px) {
+  .card-image-wrapper {
+    width: 53%;
+  }
+  .card {
+    text-align: center; /* opcjonalnie wyśrodkowanie całej karty */
+    margin: 0 auto;
+  }
+}
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
@@ -15,38 +96,70 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Klimatyzacja</h1>
-      <p>Projekt i montaż klimatyzacji — systemy split i VRF wraz z automatyzacją w inteligentnym domu.</p>
+      <p>Projekt i montaż klimatyzacji — systemy split i multisplit z integracją w inteligentnym domu.</p>
       <a class="btn" href="kontakt.html">Skontaktuj się</a>
     </div>
   </section>
 
   <main class="main-content container">
     <section class="service-details">
-      <h2>Nasze usługi klimatyzacyjne</h2>
+      <h2 style="text-align: center; margin-bottom:40px;">Nasze usługi klimatyzacyjne</h2>
       <div class="grid">
         <div class="card">
-          <img src="images/klimatyzacja.jpeg" alt="Systemy split" class="placeholder-img" data-alt="Systemy split">
+          <div class="card-image-wrapper">
+            <img src="images/split.png" alt="Systemy split" data-alt="Systemy split">
+          </div>
           <h3>Systemy split</h3>
-          <p>Instalacja i konfiguracja jednostek split dla domów i mieszkań z możliwością sterowania inteligentnego.</p>
+          <p>Instalacja i konfiguracja jednostek split dla domów i mieszkań z możliwością inteligentnego sterowania temperaturą.</p>
         </div>
 
         <div class="card">
-          <img src="images/klimatyzacja.jpeg" alt="Systemy VRF" class="placeholder-img" data-alt="Systemy VRF">
-          <h3>Systemy VRF</h3>
-          <p>Kompleksowe systemy VRF dla większych budynków i przestrzeni komercyjnych z pełną kontrolą temperatury.</p>
+          <img src="images/multisplit.webp" alt="Systemy multisplit" data-alt="Systemy multisplit">
+          <h3>Systemy multisplit</h3>
+          <p>Kompleksowe systemy multisplit dla większych przestrzeni mieszkalnych i biurowych, z pełnym komfortem i oszczędnością energii.</p>
         </div>
 
         <div class="card">
-          <img src="images/klimatyzacja.jpeg" alt="Automatyzacja klimatyzacji" class="placeholder-img" data-alt="Automatyzacja klimatyzacji">
-          <h3>Automatyzacja</h3>
-          <p>Integracja klimatyzacji z systemem Loxone dla inteligentnego sterowania temperaturą i trybami pracy.</p>
+          <img src="images/klimatyzacja-loxone.jpg" alt="Integracja z Loxone" data-alt="Integracja z Loxone">
+          <h3>Integracja z Loxone</h3>
+          <p>Automatyzacja sterowania klimatyzacją w systemie inteligentnego domu Loxone — pełna kontrola temperatury i trybów pracy.</p>
         </div>
       </div>
     </section>
 
+    <hr style="border: 1px #d3d3d3 solid;margin:40px 0;">
+
+<section class="advanced-services" style="background-color: #efefefb5; border-radius: 10px; padding-top:5px">
+  <h2 style="text-align: center; margin: 0 0 40px 0; padding-top: 0;">Zaawansowane rozwiązania klimatyzacyjne</h2>
+  <ul style="max-width: 700px; margin: 0 auto; padding: 0; list-style: none;">
+    <li style="display: flex; align-items: flex-start; margin-bottom: 25px; border-left: 4px solid #1f7bde; padding-left: 15px; height: 40px;">
+      <div>
+        <strong>Komfort i wydajność:</strong> Zapewniamy optymalną temperaturę w każdym pomieszczeniu przy minimalnym zużyciu energii.
+      </div>
+    </li>
+    <li style="display: flex; align-items: flex-start; margin-bottom: 25px; border-left: 4px solid #1f7bde; padding-left: 15px; height: 40px;">
+      <div>
+        <strong>Profesjonalne doradztwo:</strong> Dobór systemu split lub multisplit idealnie dopasowanego do Twojego domu lub biura.
+      </div>
+    </li>
+    <li style="display: flex; align-items: flex-start; margin-bottom: 25px; border-left: 4px solid #1f7bde; padding-left: 15px; height: 40px;">
+      <div>
+        <strong>Integracja z Loxone:</strong> Pełna automatyzacja klimatyzacji i monitorowanie parametrów przez system inteligentnego domu.
+      </div>
+    </li>
+    <li style="display: flex; align-items: flex-start; margin-bottom: 25px; border-left: 4px solid #1f7bde; padding-left: 15px; height: 40px;">
+      <div>
+        <strong>Renomowane marki:</strong> Montaż urządzeń renomowanych producentów z gwarancją wydajności i niezawodności.
+      </div>
+    </li>
+  </ul>
+</section>
+
+    <hr style="border: 1px #d3d3d3 solid;margin:40px 0;">
+
     <section class="cta">
       <h2>Rozpocznij projekt z InstalSmart</h2>
-      <p>Chcesz komfort i kontrolę nad temperaturą w domu? Skontaktuj się z nami!</p>
+      <p>Chcesz komfortową i inteligentną klimatyzację w domu? Skontaktuj się z nami!</p>
       <a class="btn" href="kontakt.html">Kontakt</a>
     </section>
   </main>

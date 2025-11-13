@@ -6,6 +6,98 @@
   <title>Instalacje GAZ | InstalSmart</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <style>
+    .service-details .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-details .card {
+      flex: 1 1 300px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .service-details .card:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .service-details .card img {
+
+      border-radius: 6px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1f7bde;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }.mode-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Media query dla małych ekranów */
+  @media (max-width: 768px) {
+    .mode-block {
+      grid-template-columns: 1fr; /* jedna kolumna */
+      text-align: center; /* wyśrodkowanie tekstu i obrazka */
+    }
+    .mode-block .mode-text {
+      order: 1; /* tekst na górze */
+    }
+    .mode-block .mode-image {
+      order: 2; /* obrazek pod tekstem */
+    }
+  }
+  .main-content {
+  margin-top: -80px; /* nachodzi na hero o 40px */
+  position: relative; /* dla bezpieczeństwa w układzie */
+  z-index: 1; /* aby główny content był nad hero, jeśli trzeba */
+}
+</style>
 </head>
 <body>
   <div id="site-header"></div>
@@ -21,34 +113,53 @@
   </section>
 
   <main class="main-content container">
+
     <section class="service-details">
-      <h2>Nasze usługi gazowe</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="images/gaz.jpeg" alt="Instalacje gazowe w domu" class="placeholder-img" data-alt="Instalacje gazowe w domu">
-          <h3>Bezpieczne instalacje</h3>
-          <p>Projekt i montaż instalacji gazowych zgodnie z obowiązującymi normami i przepisami.</p>
-        </div>
+  <h2 style="text-align: center;">Nasze usługi gazowe</h2>
+  <div class="grid">
 
-        <div class="card">
-          <img src="images/gaz.jpeg" alt="Integracja z automatyką" class="placeholder-img" data-alt="Integracja z automatyką">
-          <h3>Integracja z automatyką</h3>
-          <p>Połączenie systemu gazowego z inteligentnym sterowaniem domu Loxone dla pełnej kontroli.</p>
-        </div>
+    <div class="card">
+      <img src="images/instalacja-gaz.jpg" alt="Instalacje gazowe">
+      <h3>Wykonanie instalacji gazowych</h3>
+      <p>Wykonujemy instalacje gazowe ze wszystkimi wymaganymi uprawnieniami, zgodnie z dokumentacją projektową. Przeprowadzamy próbę ciśnieniową certyfikowanym sprzętem, gwarantując bezpieczeństwo i niezawodność instalacji.</p>
+    </div>
 
-        <div class="card">
-          <img src="images/gaz.jpeg" alt="Przeglądy i serwis instalacji" class="placeholder-img" data-alt="Przeglądy i serwis instalacji">
-          <h3>Przeglądy i serwis</h3>
-          <p>Regularne przeglądy i serwis instalacji gazowych zapewniają bezpieczeństwo i niezawodność.</p>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+      <img src="images/villant-kotly.jpg" alt="Kotły Vaillant">
+      <h3>Kotły gazowe Vaillant</h3>
+      <p>Montaż kotłów gazowych Vaillant, w tym modeli ecoTEC plus, wraz z systemami kominowymi i pełną dokumentacją uruchomienia zgodnie z zaleceniami producenta. Zapewniamy profesjonalny serwis i doradztwo techniczne.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/kaskadowe.jpg" alt="Przemysłowe systemy kaskadowe">
+      <h3>Systemy kaskadowe i automatyka</h3>
+      <p>Montujemy i serwisujemy przemysłowe systemy kaskadowe kotłów gazowych, wykonujemy przeglądy kotłów i systemów automatyki sterującej.</p>
+    </div>
+
+  </div><hr style="border: 1px #d3d3d3 solid;margin:40px 0;">
+  <img src="images/profesjonalna-instalacja-gazowa.jpg" alt="Profesjonalna instalacja gazowa" style="width:100%; margin-top:40px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+  <div class="additional-info" style="margin-top: 50px; margin-bottom: 50px;">
+    <p style="font-size: 18px;">Nasze realizacje obejmują zarówno instalacje w domach jednorodzinnych, jak i w zakładach przemysłowych. Dbamy o bezpieczeństwo, nowoczesność i efektywność energetyczną, a każda instalacja jest wykonana z najwyższą starannością przez certyfikowanych specjalistów.</p>
+    <p style="font-size: 18px;">Oferujemy również doradztwo techniczne przy wyborze kotłów, systemów automatyki i rozwiązań optymalizujących zużycie gazu, tak aby Twój system był nie tylko bezpieczny, ale również ekonomiczny i przyjazny środowisku.</p>
+  </div><hr style="border: 1px #d3d3d3 solid;margin:40px 0;">
+
+  <div class="mode-block">
+  <div class="mode-text">
+    <h3>Inteligentne sterowanie i oszczędność energii</h3>
+    <p>Oferujemy integrację z systemem Loxone, dzięki czemu Twoja instalacja gazowa staje się inteligentna i energooszczędna. System pozwala na tworzenie trybów oszczędzania, które automatycznie dopasowują pracę kotłów i urządzeń do aktualnych potrzeb budynku lub zakładu, minimalizując zużycie gazu. Dodatkowo możliwa jest automatyczna rejestracja i generowanie raportów dotyczących pracy instalacji, wydajności kotłów oraz odzysku ciepła z urządzeń generujących energię cieplną. Dzięki temu użytkownik zyskuje pełną kontrolę nad systemem, może analizować efektywność energetyczną i podejmować decyzje optymalizujące koszty eksploatacji.</p>
+  </div>
+  <div class="mode-image" style="text-align:center;">
+    <img src="images/gaz-loxone.jpg" alt="Tryb oszczędzania energii" style="max-width:500px; width:100%; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+  </div>
+</div>
+</section>
 
     <section class="cta">
       <h2>Rozpocznij projekt z InstalSmart</h2>
-      <p>Chcesz bezpieczną i inteligentną instalację gazową? Skontaktuj się z nami!</p>
+      <p>Chcesz bezpieczną, inteligentną i nowoczesną instalację gazową? Skontaktuj się z nami!</p>
       <a class="btn" href="kontakt.html">Kontakt</a>
     </section>
+
   </main>
 
   <div id="site-footer" class="footer-placeholder"></div>
