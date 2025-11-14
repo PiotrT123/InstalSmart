@@ -6,7 +6,27 @@
   <title>InstalSmart — Inteligentne domy i instalacje</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <style>
+    .card-link-wrapper {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
 
+    .card-link-wrapper .card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-link-wrapper:hover .card {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card{
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
 
@@ -25,51 +45,59 @@
 
   <main class="main-content container">
     <section class="services">
-      <h2 style="text-align: center;">Nasze usługi</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="images/loxone.jpg" alt="System Loxone inteligentny dom">
-          <h3>Loxone — inteligentne domy</h3>
-          <p>Projektujemy i integrujemy systemy Loxone: sterowanie oświetleniem, ogrzewaniem, monitoringiem i scenami.</p>
-          <a href="loxone.html" class="card-link">Zobacz</a>
-        </article>
+  <h2 style="text-align: center; margin-bottom: 40px">Nasze usługi</h2>
+  <div class="grid">
 
-        <article class="card">
-          <img src="images/wod-kan.webp" alt="Instalacje wodno-kanalizacyjne">
-          <h3>Instalacje WOD-KAN</h3>
-          <p>Kompleksowe instalacje wodno-kanalizacyjne dla domów i obiektów przemysłowych.</p>
-          <a href="wod-kan.html" class="card-link">Zobacz</a>
-        </article>
+    <a href="loxone.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/loxone.jpg" alt="System Loxone inteligentny dom">
+        <h3>Loxone — inteligentne domy</h3>
+        <p>Projektujemy i integrujemy systemy Loxone: sterowanie oświetleniem, ogrzewaniem, monitoringiem i scenami.</p>
+      </article>
+    </a>
 
-        <article class="card">
-          <img src="images/gaz.jpeg" alt="Instalacje gazowe">
-          <h3>Instalacje GAZ</h3>
-          <p>Bezpieczne instalacje gazowe i ich integracja z systemem automatyki.</p>
-          <a href="gaz.html" class="card-link">Zobacz</a>
-        </article>
+    <a href="wod-kan.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/wod-kan.webp" alt="Instalacje wodno-kanalizacyjne">
+        <h3>Instalacje WOD-KAN</h3>
+        <p>Kompleksowe instalacje wodno-kanalizacyjne dla domów i obiektów przemysłowych.</p>
+      </article>
+    </a>
 
-        <article class="card">
-          <img src="images/pompa-ciepla.jpg" alt="Pompy ciepła i pompy obiegowe">
-          <h3>Pompy ciepła</h3>
-          <p>Doradztwo, dostawa i montaż — od pomp obiegowych po pompy ciepła. Integrujemy sterowanie z Loxone.</p>
-          <a href="pompy.html" class="card-link">Zobacz</a>
-        </article>
+    <a href="gaz.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/gaz.jpeg" alt="Instalacje gazowe">
+        <h3>Instalacje GAZ</h3>
+        <p>Bezpieczne instalacje gazowe i ich integracja z systemem automatyki.</p>
+      </article>
+    </a>
 
-        <article class="card">
-          <img src="images/klimatyzacja.jpeg" alt="Systemy klimatyzacji">
-          <h3>Klimatyzacja</h3>
-          <p>Projekt i montaż klimatyzacji — systemy split i VRF wraz z automatyzacją.</p>
-          <a href="klimatyzacja.html" class="card-link">Zobacz</a>
-        </article>
+    <a href="pompy.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/pompa-ciepla.jpg" alt="Pompy ciepła i pompy obiegowe">
+        <h3>Pompy ciepła</h3>
+        <p>Doradztwo, dostawa i montaż — od pomp obiegowych po pompy ciepła. Integrujemy sterowanie z Loxone.</p>
+      </article>
+    </a>
 
-        <article class="card">
-          <img src="images/logo2.png" alt="Logo InstalSmart">
-          <h3>Realizacje</h3>
-          <p>Galeria projektów — zdjęcia z naszych realizacji (na razie zastępcze).</p>
-          <a href="realizacje.html" class="card-link">Zobacz</a>
-        </article>
-      </div>
-    </section>
+    <a href="klimatyzacja.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/klimatyzacja.jpeg" alt="Systemy klimatyzacji">
+        <h3>Klimatyzacja</h3>
+        <p>Projekt i montaż klimatyzacji — systemy split i VRF wraz z automatyzacją.</p>
+      </article>
+    </a>
+
+    <a href="realizacje.html" class="card-link-wrapper">
+      <article class="card">
+        <img src="images/logo2.png" alt="Logo InstalSmart">
+        <h3>Realizacje</h3>
+        <p>Galeria projektów — zdjęcia z naszych realizacji (na razie zastępcze).</p>
+      </article>
+    </a>
+
+  </div>
+</section>
     <section class="review-cta">
       <h2>Podziel się opinią o InstalSmart</h2>
       <p>Twoja opinia jest dla nas bardzo ważna! Napisz ją na Google i pomóż innym poznać nasze usługi.</p>
