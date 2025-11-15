@@ -6,12 +6,18 @@
   <title>Kontakt | InstalSmart</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
-  
+
   <style>
-    /* Nowoczesny wygląd dla main-content */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Nowoczesny wygląd dla main-content */
 .main-content {
-  position: relative; /* pozwala na nachodzenie na hero */
-  top: -60px; /* nachodzenie na hero */
+  position: relative;
+  top: -60px;
   background-color: #ffffff;
   padding: 50px 30px;
   border-radius: 20px;
@@ -32,12 +38,13 @@
   font-weight: 700;
 }
 
-/* Kontakt wrapper nowocześnie */
+/* Kontakt wrapper */
 .contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 40px;
-  align-items: center; /* lepiej wyrównanie w pionie */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* Formularz */
@@ -47,10 +54,21 @@
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* odstęp między polami */
 }
 
 .contact-form:hover {
   transform: translateY(-5px);
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .contact-form input,
@@ -60,6 +78,8 @@
   border-radius: 10px;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .contact-form input:focus,
@@ -73,10 +93,26 @@
   background: linear-gradient(135deg, #0077cc, #005fa3);
   box-shadow: 0 5px 15px rgba(0, 95, 163, 0.3);
   font-weight: 600;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: flex-start;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #005fa3, #003b66);
 }
 
 /* Obrazek kontaktowy */
 .contact-image {
+  flex: 1 1 45%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
@@ -110,6 +146,7 @@
   color: #fff;
   font-weight: 600;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .cta .btn:hover {
@@ -117,17 +154,23 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-wrapper {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form, .contact-image {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .contact-image {
     margin-top: 20px;
-    width: 100%;
-    height: auto;
   }
+}
 
+@media (max-width: 768px) {
   .main-content {
     top: -40px;
     padding: 30px 20px;
@@ -155,19 +198,19 @@
           <label>
             Imię i nazwisko:
             <input type="text" name="name" required>
-          </label>
+          </label><br>
           <label>
             Email:
             <input type="email" name="email" required>
           </label>
-          <label>
+          <label><br>
             Telefon:
             <input type="tel" name="phone">
           </label>
           <label>
             Wiadomość:
             <textarea name="message" rows="6" required></textarea>
-          </label>
+          </label><br>
           <button type="submit" class="btn">Wyślij</button>
         </form>
         <img src="images/kontakt.jpg" alt="Kontakt z InstalSmart zdjęcie" class="contact-image">
