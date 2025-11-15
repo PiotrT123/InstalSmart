@@ -7,273 +7,233 @@
   <meta name="description" content="InstalSmart — projektujemy i integrujemy systemy Loxone. Kompleksowy nadzór prac, instalacje Miniserver, Audioserver i pełna automatyka domu." />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
+  <!-- Lokalne style tylko dla podstrony -->
   <style>
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-/* --- HERO --- */
-.hero {
-  position: relative;
-  height: 60vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* wyśrodkowanie pionowe */
-  align-items: center;     /* wyśrodkowanie poziome */
-  text-align: center;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-}
-
-.hero-content {
-  position: relative; /* usunięto absolute i transform */
-  max-width: 700px;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  background: #4CAF50;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.btn:hover {
-  background: #3b8e3b;
-}
-
-/* --- Sekcja urządzeń Loxone --- */
-.loxone-devices {
-  text-align: center;
-  padding: 60px 0;
-  background-color: #f5f5f5;
-  position: relative;
-}
-
-.loxone-devices h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.carousel {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.6s ease-in-out;
-}
-
-.card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  flex: 0 0 300px;
-  padding: 20px;
-  text-align: center;
-  user-select: none;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.4;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  z-index: 10;
-}
-
-.carousel-btn:hover {
-  background: #3b8e3b;
-}
-
-.prev {
-  left: 20px;
-}
-
-.next {
-  right: 20px;
-}
-
-/* Dodatkowo: responsywność */
-@media (max-width: 768px) {
-  .card {
-    flex: 0 0 80%;
+  /* --- HERO --- */
+  .loxone-hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Inter", sans-serif;
   }
-}
 
-/* --- Sekcja plaster miodu --- */
-.loxone-hex-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #222;
-  font-family: "Inter", sans-serif;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
+  .loxone-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
 
-.honeycomb {
-  width: 560px;
-  height: 430px;
-  margin: 0;
-  transform: scale(1);
-  position: relative;
-}
+  .loxone-hero .hero-content {
+    position: relative;
+    max-width: 700px;
+    color: white;
+  }
 
-/* --- Styl heksów --- */
-.hex {
-  width: 140px;
-  aspect-ratio: 1;
-  background: radial-gradient(circle at 30% 30%, #4CAF50 0%, #43a047 50%, #3b8e3b 100%) !important;
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-  border-radius: 12px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  box-shadow:
-    0 0 25px rgba(76, 175, 80, 0.5),
-    0 8px 18px rgba(0, 0, 0, 0.25),
-    inset 0 0 15px rgba(255, 255, 255, 0.2),
-    inset -10px -10px 25px rgba(0, 0, 0, 0.3) !important;
-  transform: rotate(90deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  text-decoration: none;
-}
+  .loxone-hero .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
 
-.hex:hover {
-  box-shadow:
-    0 0 35px rgba(76, 175, 80, 0.85),
-    inset 0 0 18px rgba(255, 255, 255, 0.3),
-    inset -12px -12px 25px rgba(0, 0, 0, 0.35) !important;
-  filter: brightness(1.1);
-}
+  .loxone-hero .btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+  }
 
-.hex-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transform: rotate(-90deg);
-}
+  .loxone-hero .btn:hover {
+    background: #3b8e3b;
+  }
 
-.hex .hex-inner img,
-.hex .hex-inner p,
-.hex .hex-inner span {
-  transform: none !important;
-}
+  /* --- Sekcja urządzeń Loxone --- */
+  .loxone-devices {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #f5f5f5;
+    position: relative;
+    font-family: "Inter", sans-serif;
+  }
 
-.hex .hex-inner img {
-  width: 36px;
-  height: auto;
-  margin: 0;
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
-}
+  .loxone-devices h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
 
-.hex .hex-inner p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: white;
-  white-space: nowrap;
-}
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-/* Układ heksów */
-.hex.lighting { top: 0; left: 220px; }
-.hex.access { top: 65px; left: 110px; }
-.hex.energy.center { top: 130px; left: 220px; }
-.hex.shading { top: 65px; left: 330px; }
-.hex.security { top: 195px; left: 110px; }
-.hex.climate { top: 195px; left: 330px; }
-.hex.audio { top: 258px; left: 220px; }
+  .carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease-in-out;
+  }
 
-/* --- Responsywność honeycomb --- */
-@media (max-width: 900px) { .honeycomb { transform: scale(0.85); } }
-@media (max-width: 700px) { .honeycomb { transform: scale(0.7); } }
-@media (max-width: 500px) { .honeycomb { transform: scale(0.55); } }
-@media (max-width: 380px) { .honeycomb { transform: scale(0.48); } }
+  .carousel .card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 0 0 300px;
+    padding: 20px;
+    text-align: center;
+    user-select: none;
+  }
 
-/* --- Zabezpieczenie przewijania poziomego --- */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-}
+  .carousel .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
 
-/* --- RESPONSYWNOŚĆ HERO --- */
-@media (max-width: 480px) {
-  .hero {
-    height: auto;
+  .carousel .card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .carousel .card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: #3b8e3b;
+  }
+
+  .prev { left: 20px; }
+  .next { right: 20px; }
+
+  @media (max-width: 768px) {
+    .carousel .card { flex: 0 0 80%; }
+  }
+
+  /* --- Sekcja plaster miodu --- */
+  .loxone-hex-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #222;
+    font-family: "Inter", sans-serif;
     padding: 60px 20px;
   }
-  .hero-content h1 {
-    font-size: 2rem;
+
+  .honeycomb {
+    width: 560px;
+    height: 430px;
+    margin: 0;
+    transform: scale(1);
+    position: relative;
   }
-  .hero-content p {
-    font-size: 0.9rem;
+
+  .hex {
+    width: 140px;
+    aspect-ratio: 1;
+    background: radial-gradient(circle at 30% 30%, #4CAF50 0%, #43a047 50%, #3b8e3b 100%);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    border-radius: 12px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    box-shadow:
+      0 0 25px rgba(76, 175, 80, 0.5),
+      0 8px 18px rgba(0, 0, 0, 0.25),
+      inset 0 0 15px rgba(255, 255, 255, 0.2),
+      inset -10px -10px 25px rgba(0, 0, 0, 0.3);
+    transform: rotate(90deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    text-decoration: none;
   }
-  .btn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+
+  .hex:hover {
+    box-shadow:
+      0 0 35px rgba(76, 175, 80, 0.85),
+      inset 0 0 18px rgba(255, 255, 255, 0.3),
+      inset -12px -12px 25px rgba(0, 0, 0, 0.35);
+    filter: brightness(1.1);
   }
-}
+
+  .hex-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transform: rotate(-90deg);
+  }
+
+  .hex .hex-inner img {
+    width: 36px;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  }
+
+  .hex .hex-inner p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: white;
+    white-space: nowrap;
+  }
+
+  /* Układ heksów */
+  .hex.lighting { top: 0; left: 220px; }
+  .hex.access { top: 65px; left: 110px; }
+  .hex.energy.center { top: 130px; left: 220px; }
+  .hex.shading { top: 65px; left: 330px; }
+  .hex.security { top: 195px; left: 110px; }
+  .hex.climate { top: 195px; left: 330px; }
+  .hex.audio { top: 258px; left: 220px; }
+
+  /* Responsywność honeycomb */
+  @media (max-width: 900px) { .honeycomb { transform: scale(0.85); } }
+  @media (max-width: 700px) { .honeycomb { transform: scale(0.7); } }
+  @media (max-width: 500px) { .honeycomb { transform: scale(0.55); } }
+  @media (max-width: 380px) { .honeycomb { transform: scale(0.48); } }
+
+  /* --- Zabezpieczenie przewijania poziomego --- */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
 
   </style>
 </head>

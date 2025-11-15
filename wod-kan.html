@@ -8,208 +8,272 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, sans-serif;
-      color: #222;
-      line-height: 1.6;
-      background: #f8f9fa;
-    }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background: #f8f9fa;
+}
 
-    .container {
-      width: min(1200px, 90%);
-      margin: 0 auto;
-    }
+.container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
 
-    /* HERO */
-    .hero {
-      position: relative;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-      z-index: 1;
-    }
+/* HERO */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  min-height: 60vh; /* minimalna wysokość hero */
+}
 
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      z-index: 1;
-    }
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 2;
-    }
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 2;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 800px;
-      padding: 20px;
-    }
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
 
-    .hero h1 {
-      font-size: 2.6rem;
-      margin-bottom: 1rem;
-    }
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
 
-    .btn {
-      display: inline-block;
-      background: #1f7bde;
-      color: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
+.hero p {
+  font-size: 1.2rem;
+}
 
-    .btn:hover {
-      background: #004896;
-    }
+/* PRZYCISKI */
+.btn {
+  display: inline-block;
+  background: #1f7bde;
+  color: white;
+  padding: 7px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  height: 40px;
+  
+}
 
-    main {
-      padding: 3rem 0;
-      background: white;
-      margin-top: 0; /* usunięty negatywny margin */
-      position: relative;
-      z-index: 3;
-    }
+.btn:hover {
+  background: #004896;
+}
 
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
+/* GŁÓWNA ZAWARTOŚĆ */
+.main-content {
+  position: relative;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 40px;
+  box-sizing: border-box;
+}
 
-    p {
-      margin-bottom: 1rem;
-    }
+/* INTRO */
+.intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 5px;
+}
 
-    .intro {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 3rem;
-    }
+/* TYTUŁY */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      align-items: stretch;
-    }
+p {
+  margin-bottom: 1rem;
+}
 
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-      justify-content: flex-start;
-      padding-bottom: 60px;
-    }
+/* GRID USŁUG */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  padding-bottom: 60px;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
 
-    .card h3 {
-      font-size: 1.4rem;
-      color: #1f7bde;
-      margin: 0.5rem 0;
-      text-align: center;
-    }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
 
-    .card p {
-      flex-grow: 1;
-      text-align: left; /* zamiast justify */
-    }
+.card h3 {
+  font-size: 1.4rem;
+  color: #1f7bde;
+  margin: 0.5rem 0;
+  text-align: center;
+}
 
-    .about-quality {
-      margin-top: 3rem;
-    }
+.card p {
+  flex-grow: 1;
+  text-align: left;
+}
 
-    .about-quality ul {
-      list-style: none;
-      padding: 0;
-      max-width: 800px;
-      margin: 0 auto 3rem;
-    }
+/* O NAS / JAKOŚĆ USŁUG */
+.about-quality {
+  margin-top: 3rem;
+}
 
-    .about-quality li {
-      background: #eef3f9;
-      border-left: 4px solid #1f7bde;
-      margin: 0.7rem 0;
-      padding: 0.8rem 1rem;
-      border-radius: 6px;
-    }
+.about-quality ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
 
-    .cta {
-      background: #1f7bde;
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: 3rem auto 0;
-    }
+.about-quality li {
+  background: #eef3f9;
+  border-left: 4px solid #1f7bde;
+  margin: 0.7rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+}
 
-    .cta h2 {
-      color: white;
-      margin-bottom: 1rem;
-    }
+/* CTA */
+.cta {
+  background: #1f7bde;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+}
 
-    .cta .btn {
-      background: white;
-      color: #267ddb;
-    }
+.cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
 
-    .cta .btn:hover {
-      background: #e8e8e8;
-    }
+.cta .btn {
+  background: white;
+  color: #267ddb;
+}
 
-    #site-footer {
-      background: #e9ecef;
-      color: #333;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 60px;
-      font-size: 14px;
-      border-top: 1px solid #d0d3d6;
-      position: relative;
-      z-index: 1;
-    }
+.cta .btn:hover {
+  background: #e8e8e8;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.8rem; }
-      .hero p { font-size: 1rem; }
-      .grid { grid-template-columns: 1fr; }
-    }
-  </style>
+/* STOPKA */
+#site-footer {
+  background: #e9ecef;
+  color: #333;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 60px;
+  font-size: 14px;
+  border-top: 1px solid #d0d3d6;
+  position: relative;
+  z-index: 1;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .main-content {
+    margin: 0;   /* usuwa marginesy boczne i górne */
+    padding: 0;  /* usuwa padding boczny */
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro, .cta, .about-quality {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.main-content {
+  position: relative;
+  max-width: 1100px; /* duże ekrany */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 40px;
+  box-sizing: border-box;
+  margin-top: -40px;
+}
+
+@media (max-width: 780px) {
+  .main-content {
+    width: 100%; /* cała szerokość ekranu */
+  }
+}
+.hero h1 {
+  font-size: 2rem; /* zmniejszenie z 2.6rem */
+}
+
+.hero p {
+  font-size: 1rem; /* zmniejszenie z 1.2rem */
+}
+</style>
+
 </head>
 <body>
 
@@ -221,13 +285,13 @@
   <div class="hero-content">
     <h1>Instalacje WOD-KAN w wysokim standardzie</h1>
     <p>Kompleksowe wykonanie instalacji wodno-kanalizacyjnych — z dbałością o detale, komfort użytkowników i wysoką efektywność energetyczną. Doradzamy, dobieramy i montujemy systemy dopasowane do Twoich potrzeb.</p>
-    <a class="btn" href="kontakt.html">Skontaktuj się z nami</a>
+    <a class="btn" href="kontakt.html">Skontaktuj się</a>
   </div>
 </section>
 
 <main class="main-content container">
   <section class="intro">
-    <h2>Nowoczesne instalacje wodno-kanalizacyjne</h2>
+    <h2 class="h2-intro" >Nowoczesne instalacje wodno-kanalizacyjne</h2>
     <p>InstalSmart to profesjonalna firma, która od lat zajmuje się projektowaniem i montażem instalacji wodnych oraz kanalizacyjnych — zarówno w budynkach jednorodzinnych, jak i w obiektach przemysłowych. Każde zlecenie traktujemy indywidualnie, dbając o trwałość, estetykę i energooszczędność systemu.</p>
     <p>Dzięki doświadczeniu i nowoczesnym technologiom gwarantujemy wykonanie instalacji o najwyższej jakości — od przyłącza po końcowy montaż armatury.</p>
   </section>
@@ -281,78 +345,6 @@
 </main>
 
 <footer id="site-footer"></footer>
-
-<script>
-(function(){
-  const headerHTML = `
-  <div class="header">
-    <div class="header-inner container">
-      <a href="index.html" class="brand">
-        <img src="images/logo.png" alt="" class="logo">
-        <span>InstalSmart</span>
-      </a>
-
-      <nav class="nav">
-        <a href="index.html">Strona główna</a>
-        <a id="loxonene" href="loxone.html">Loxone</a>
-        <a href="wod-kan.html">WOD-KAN</a>
-        <a href="gaz.html">GAZ</a>
-        <a href="pompy.html">Pompy</a>
-        <a href="klimatyzacja.html">Klimatyzacja</a>
-        <a href="realizacje.html">Realizacje</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-
-      <div class="header-meta">
-        <a href="https://www.google.com/maps?q=Mucharz+414+34-106" target="_blank" rel="noopener" class="meta-link">
-          📍 Mucharz 414
-        </a>
-        <a href="mailto:piotrtargosz15@gmail.com" class="meta-link">
-          ✉️ piotrtargosz15@gmail.com
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61571637170536&sk=about" target="_blank" rel="noopener" aria-label="Facebook" class="facebook-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
-            <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 
-            23.405.595 24 1.325 24H12.82v-9.294H9.692V11.29h3.128V8.413c0-3.1 
-            1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24h-1.92c-1.506 
-            0-1.797.717-1.797 1.77v2.312h3.588l-.467 3.416h-3.121V24h6.117C23.406 
-            24 24 23.405 24 22.674V1.326C24 .594 23.406 0 22.675 0z"/>
-          </svg>
-        </a>
-      </div>
-
-      <button class="hamburger" aria-label="menu">☰</button>
-    </div>
-  </div>`;
-
-  const footerHTML = `
-  <div class="footer">
-    <div class="container">
-      <p>© ${new Date().getFullYear()} InstalSmart — Wszystkie prawa zastrzeżone</p>
-      <p class="muted">Mucharz 414 34-106 • NIP - 5512668896 • tel. +48 535 150 597</p>
-    </div>
-  </div>`;
-
-  const siteHeader = document.getElementById('site-header');
-  const siteFooter = document.getElementById('site-footer');
-
-  if(siteHeader) siteHeader.insertAdjacentHTML('afterbegin', headerHTML);
-  if(siteFooter) siteFooter.innerHTML = footerHTML;
-
-  const hh = document.querySelector('.hamburger');
-  const nav = document.querySelector('.nav');
-  hh?.addEventListener('click', ()=>{
-    if(!nav) return;
-    const visible = nav.style.display === 'flex';
-    nav.style.display = visible ? 'none':'flex';
-    nav.style.flexDirection = 'column';
-    nav.style.background = '#fff';
-    nav.style.position = 'absolute';
-    nav.style.right = '20px';
-    nav.style.top = '60px';
-    nav.style.boxShadow = '0 6px 18px rgba(0,0,0,.08)';
-  });
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

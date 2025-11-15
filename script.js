@@ -1,23 +1,27 @@
 (function(){
 
+  // ===== HEADER HTML =====
   const headerHTML = `
   <header class="header">
     <div class="header-inner container">
-      <a href="index.html" class="brand">
-        <img src="images/logo.png" alt="" class="logo">
-        <span>InstalSmart</span>
-      </a>
 
-      <nav class="nav">
-        <a href="index.html">Strona główna</a>
-        <a id="loxonene" href="loxone.html">Loxone</a>
-        <a href="wod-kan.html">WOD-KAN</a>
-        <a href="gaz.html">GAZ</a>
-        <a href="pompy.html">Pompy</a>
-        <a href="klimatyzacja.html">Klimatyzacja</a>
-        <a href="realizacje.html">Realizacje</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
+      <div class="brand-nav-group">
+        <a href="index.html" class="brand">
+          <img src="images/logo.png" alt="" class="logo">
+          <span>InstalSmart</span>
+        </a>
+
+        <nav class="nav">
+          <a href="index.html">Strona główna</a>
+          <a id="loxonene" href="loxone.html">Loxone</a>
+          <a href="wod-kan.html">WOD-KAN</a>
+          <a href="gaz.html">GAZ</a>
+          <a href="pompy.html">Pompy</a>
+          <a href="klimatyzacja.html">Klimatyzacja</a>
+          <a href="realizacje.html">Realizacje</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
 
       <div class="header-meta">
         <a href="https://www.google.com/maps?q=Mucharz+414+34-106" target="_blank" rel="noopener" class="meta-link">
@@ -39,42 +43,56 @@
 
       <button class="hamburger" aria-label="menu">☰</button>
     </div>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Strona główna</a>
+      <a id="loxonene" href="loxone.html">Loxone</a>
+      <a href="wod-kan.html">WOD-KAN</a>
+      <a href="gaz.html">GAZ</a>
+      <a href="pompy.html">Pompy</a>
+      <a href="klimatyzacja.html">Klimatyzacja</a>
+      <a href="realizacje.html">Realizacje</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
   </header>`;
 
-  const footerHTML = `
-  <footer class="footer">
-    <div class="container">
-      <p>© ${new Date().getFullYear()} InstalSmart — Wszystkie prawa zastrzeżone</p>
-      <p class="muted">
-        Mucharz 414 34-106 • NIP - 5512668896 • tel. +48 535 150 597
-      </p>
-    </div>
-  </footer>`;
+  // ===== FOOTER HTML =====
+const footerHTML = `
+  <div class="container">
+    <p>© ${new Date().getFullYear()} InstalSmart — Wszystkie prawa zastrzeżone</p>
+    <p class="muted">Mucharz 414 34-106 • NIP - 5512668896 • tel. +48 535 150 597</p>
+  </div>`;
 
-  
+  // ===== Wstaw header i footer =====
   const siteHeader = document.getElementById('site-header');
   const siteFooter = document.getElementById('site-footer');
 
   if(siteHeader) siteHeader.insertAdjacentHTML('afterbegin', headerHTML);
   if(siteFooter) siteFooter.innerHTML = footerHTML;
 
-
+  // ===== HAMBURGER MENU =====
   const hh = document.querySelector('.hamburger');
-  const nav = document.querySelector('.nav');
-  hh?.addEventListener('click', ()=>{
-    if(!nav) return;
-    const visible = nav.style.display === 'flex';
-    nav.style.display = visible ? 'none':'flex';
-    nav.style.flexDirection = 'column';
-    nav.style.background = '#fff';
-    nav.style.position = 'absolute';
-    nav.style.right = '20px';
-    nav.style.top = '60px';
-    nav.style.boxShadow = '0 6px 18px rgba(0,0,0,.08)';
-  });
+const mobileMenu = document.getElementById('mobileMenu');
 
+hh?.addEventListener('click', () => {
+  mobileMenu.classList.toggle('show');
+});
+
+// Kliknięcie w link zamyka menu
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+  });
+});
+
+  // ===== PLACEHOLDER SVG =====
   function svgDataURI(width=800, height=500, bgColor='#ccc', title='placeholder'){
-    const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'><rect width='100%' height='100%' fill='${bgColor}'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='28' fill='rgba(255,255,255,0.9)'>${title}</text></svg>`;
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'>
+      <rect width='100%' height='100%' fill='${bgColor}'/>
+      <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' 
+        font-family='Arial' font-size='28' fill='rgba(255,255,255,0.9)'>${title}</text>
+      </svg>`;
     return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
   }
 
@@ -95,4 +113,5 @@
   } else {
     preparePlaceholders();
   }
+
 })();

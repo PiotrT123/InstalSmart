@@ -8,74 +8,131 @@
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
   
   <style>
-    /* Styl dla dwukolumnowego formularza z obrazem */
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-      margin-top: 30px;
-    }
+    /* Nowoczesny wygląd dla main-content */
+.main-content {
+  position: relative; /* pozwala na nachodzenie na hero */
+  top: -60px; /* nachodzenie na hero */
+  background-color: #ffffff;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-    }
+/* Nagłówki sekcji */
+.service-details h2,
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #003b66;
+  text-align: center;
+  font-weight: 700;
+}
 
-    .contact-form label {
-      display: flex;
-      flex-direction: column;
-      font-weight: bold;
-    }
+/* Kontakt wrapper nowocześnie */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center; /* lepiej wyrównanie w pionie */
+}
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%; /* wszystkie pola mają pełną szerokość formularza */
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
+/* Formularz */
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
 
-    .contact-form button {
-      width: 100%; /* przycisk nie rozciąga się na całą szerokość */
-      padding: 10px 20px;
-      background-color: #005fa3;
-      color: #fff;
-      border-radius: 5px;
-      border: none;
-      font-family: inherit; /* dopasowuje czcionkę do pozostałych przycisków */
-      font-size: 1rem;      /* taki sam rozmiar jak przycisk powrotu */
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.contact-form:hover {
+  transform: translateY(-5px);
+}
 
-    .contact-form button:hover {
-      background-color: #004d85;
-    }
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #d1d1d1;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .contact-image {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #005fa3;
+  box-shadow: 0 0 8px rgba(0, 95, 163, 0.2);
+  outline: none;
+}
 
-    @media (max-width: 768px) {
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
+.contact-form button {
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  box-shadow: 0 5px 15px rgba(0, 95, 163, 0.3);
+  font-weight: 600;
+}
 
-      .contact-image {
-        margin-top: 20px;
-        width: 100%;
-        height: auto;
-      }
-    }
+/* Obrazek kontaktowy */
+.contact-image {
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-image:hover {
+  transform: scale(1.02);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  background: #f0f7ff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.cta .btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  padding: 12px 30px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta .btn:hover {
+  background: linear-gradient(135deg, #005fa3, #003b66);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    top: -40px;
+    padding: 30px 20px;
+  }
+}
   </style>
 </head>
 <body>
