@@ -30,7 +30,7 @@
         <a href="mailto:piotrtargosz15@gmail.com" class="meta-link">
           ✉️ piotrtargosz15@gmail.com
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61571637170536&sk=about" target="_blank" rel="noopener" aria-label="Facebook" class="facebook-link">
+        <a href="https://m.facebook.com/profile.php?id=61571637170536" target="_blank" rel="noopener" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
             <path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 
             23.405.595 24 1.325 24H12.82v-9.294H9.692V11.29h3.128V8.413c0-3.1 
