@@ -110,17 +110,22 @@ body {
 
 /* Buttons */
 .btn {
-  background: #1f7bde;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
   display: inline-block;
-  transition: transform 0.2s ease, 0.2s ease;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #0077cc, #004c82);
+  padding: 12px 30px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
 }
-.btn:hover { transform: translateY(-2px); background: #005fa3; }
 
+.btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #005fa3, #004080);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 /* Main card look */
 .main-content {
   background: #f5f5f5;
