@@ -51,12 +51,13 @@ body {
   height: 60px;
   width: auto;
 }
-.nav { display: flex; gap: 12px; }
+.nav { display: flex; gap: 8px; }
 .nav a {
   color: #222;
   text-decoration: none;
   padding: 8px;
   transition: color 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
 }
 .nav a:hover { color: var(--accent); opacity: 0.85; }
 .hamburger { display: none; background: none; border: 0; font-size: 24px; cursor: pointer; }
