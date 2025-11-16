@@ -134,7 +134,7 @@ body {
 /* Why us / checklist */
 .why-us h2, .loxone-overview h2, .devices h2 { margin-top: 0; }
 .checklist { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
-.checklist li { background: white; padding: 10px 12px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.04); }
+.checklist li { background: white; padding: 10px 12px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.04); text-align: center; }
 
 /* Features grid */
 .features-grid {

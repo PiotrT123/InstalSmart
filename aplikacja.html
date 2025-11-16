@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
   <style>
-    body { font-family: "Helvetica Neue", Arial, sans-serif; color:#111; margin:0; background:#fff; }
+    body { color:#111; margin:0; background:#fff; }
     .container { max-width:1100px; margin:0 auto; padding:40px 20px; }
-    .hero { position:relative; height:360px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#f5f5f5; }
+    .hero { position:relative; height:640px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#f5f5f5; }
     .hero-img { position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.6); }
     .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.3)); }
     .hero-content { position:relative; z-index:2; color:#fff; text-align:center; padding:0 20px; }
@@ -18,7 +18,7 @@
 
     .feature-detail, .mode-block { margin-top:30px; }
     .checklist { list-style: none; padding:0; margin:10px 0 0 0; }
-    .checklist li { padding:6px 0; position:relative; padding-left:22px; }
+    .checklist li {position:relative; padding-left:22px; }
     .checklist li:before { content:'•'; position:absolute; left:0; color:#2f9e44; font-weight:bold; }
 
     .app-screens { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; margin-top:20px; }
@@ -86,12 +86,100 @@
 .main-content {
   position: relative;
   z-index: 2;
-  background: #fff;
   margin-top: -40px; /* dostosuj np. -80px lub -120px jeśli chcesz mocniejsze nachodzenie */
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgb(194, 194, 194);
   padding: 40px 20px;
   
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.checklist li {
+  padding: 10px 12px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.checklist li::before {
+  content: none !important;
+}
+
+#site-header,
+#site-header * {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+#site-header .header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  padding: 10px 0 !important;
+}
+
+#site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px !important;
+}
+
+#site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px !important;
+  text-decoration: none;
+  color: #111 !important;
+}
+
+#site-header .brand .logo {
+  height: 45px !important;
+}
+
+/* MENU */
+#site-header .nav a {
+  padding: 5px 14px !important;
+  font-size: 16px !important;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* META */
+#site-header .header-meta {
+  gap: 18px !important;
+}
+
+#site-header .meta-link {
+  font-size: 15px !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  #site-header .nav { display: none !important; }
+  #site-header .hamburger { display: block !important; }
+}
+
+@media (max-width: 980px) and (min-width: 601px) {
+  #site-header .header-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #site-header .brand-nav-group {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  #site-header .nav {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 }
   </style>
 </head>
@@ -170,7 +258,7 @@ To inteligentny system, który myśli za Ciebie i zapewnia codzienny komfort bez
 
   <div class="feature-card" style="background-image:url('images/multiroom.jpg');">
     <h4>Multiroom audio</h4>
-    <p>Odtwarzaj różne źródła w każdym pomieszczeniu lub zsynchronizuj je w całym domu.</p>
+    <p>Odtwarzaj muzykę z różnych źródeł lub zsynchronizuj ją w całym domu.</p>
   </div>
 
   <div class="feature-card" style="background-image:url('images/efekty-swietlne.webp');">
@@ -224,7 +312,7 @@ To inteligentny system, który myśli za Ciebie i zapewnia codzienny komfort bez
       <li>Zarządzanie uprawnieniami w czasie — przydzielanie kodów lub tagów na określony czas.</li>
       <li>Funkcja „Loxone Trust” — wspólny dostęp między wieloma lokalizacjami.</li>
       <li>Integracja z wideodomofonem („Loxone Intercom”) — podgląd i otwarcie drzwi z aplikacji.</li>
-      <li>Dezaktywacja zagubionych tagów lub kodów w ciągu minut bez wymiany zamka.</li>
+      <li>Dezaktywacja zagubionych tagów lub zmiana kodów w ciągu minuty bez wymiany zamka.</li>
     </ul>
     <div class="media-row" style="margin-top:20px;">
       <div><img src="images/zarzadzanie.jpg" alt="NFC Code Touch – klawiatura kodowa i NFC"></div>
@@ -246,7 +334,7 @@ To inteligentny system, który myśli za Ciebie i zapewnia codzienny komfort bez
 
   <!-- CTA -->
   <section class="cta">
-    <h2>Chcesz pełną kontrolę nad swoim domem?</h2>
+    <h2>Chcesz pełną kontrolę?</h2>
     <p>Zaprojektujemy i wdrożymy aplikację dopasowaną do Twoich potrzeb — od prostych scen po zaawansowane, uczące się reguły automatyzacji.</p>
     <a class="btn" style="background-color:#2f9e44;" href="kontakt.html">Umów bezpłatną konsultację</a>
   </section>

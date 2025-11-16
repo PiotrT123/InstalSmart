@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loxone — Inteligentne domy | InstalSmart</title>
+  <title>Loxone — Inteligentne budynki | InstalSmart</title>
   <meta name="description" content="InstalSmart — projektujemy i integrujemy systemy Loxone. Kompleksowy nadzór prac, instalacje Miniserver, Audioserver i pełna automatyka domu." />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
@@ -124,7 +124,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: 0.2s;
     z-index: 10;
   }
 
@@ -162,7 +162,9 @@
   .hex {
     width: 140px;
     aspect-ratio: 1;
-    background: radial-gradient(circle at 30% 30%, #4CAF50 0%, #43a047 50%, #3b8e3b 100%);
+    background: 
+      radial-gradient(circle at 60% 60%, rgb(34, 163, 34) 0%, transparent 90%),
+      linear-gradient(145deg, #4CAF50, #3b8e3b);
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     border-radius: 12px;
     position: absolute;
@@ -173,29 +175,95 @@
     color: white;
     font-weight: 600;
     box-shadow:
-      0 0 25px rgba(76, 175, 80, 0.5),
-      0 8px 18px rgba(0, 0, 0, 0.25),
-      inset 0 0 15px rgba(255, 255, 255, 0.2),
-      inset -10px -10px 25px rgba(0, 0, 0, 0.3);
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      0 6px 10px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 0px 0 rgba(0, 0, 0, 0.2);
     transform: rotate(90deg);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+  }
+
+  /* Efekt połyskujących krawędzi */
+  .hex::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: 
+      linear-gradient(135deg, 
+        rgba(129, 255, 144, 0.8) 0%, 
+        rgba(51, 255, 85, 0.414) 30%, 
+        rgba(63, 255, 101, 0.938) 50%, 
+        rgba(41, 239, 91, 0.559) 70%, 
+        rgba(190, 250, 197, 0.93) 100%);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    z-index: 1;
+    opacity: 0.7;
+    filter: blur(0.5px);
+  }
+
+  /* Efekt 3D - krawędzie boczne */
+  .hex::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(135deg, 
+        rgba(255,255,255,0.3) 0%, 
+        rgba(255,255,255,0.1) 20%, 
+        transparent 40%, 
+        rgba(0,0,0,0.1) 60%, 
+        rgba(0,0,0,0.2) 80%, 
+        rgba(0,0,0,0.3) 100%);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    z-index: 2;
+    opacity: 0.6;
   }
 
   .hex:hover {
+    transform: rotate(90deg) scale(1.05);
     box-shadow:
-      0 0 35px rgba(76, 175, 80, 0.85),
-      inset 0 0 18px rgba(255, 255, 255, 0.3),
-      inset -12px -12px 25px rgba(0, 0, 0, 0.35);
-    filter: brightness(1.1);
+      0 15px 40px rgba(0, 0, 0, 0.4),
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 0px 0 rgba(0, 0, 0, 0.25);
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(74, 244, 102, 0.9) 0%, transparent 50%),
+      linear-gradient(145deg, #5cb860, #4CAF50);
+  }
+
+  .hex:hover::before {
+    opacity: 0.9;
+    filter: blur(0.8px);
+  }
+
+  .hex:active {
+    transform: rotate(90deg) translateY(2px) scale(0.98);
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.3),
+      0 3px 8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -4px 0 rgba(0, 0, 0, 0.2);
   }
 
   .hex-inner {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     transform: rotate(-90deg);
+    position: relative;
+    z-index: 3;
   }
 
   .hex .hex-inner img {
@@ -204,13 +272,22 @@
     margin: 0;
     flex-shrink: 0;
     filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+    transition: all 0.3s ease;
+  }
+
+  .hex:hover .hex-inner img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
   }
 
   .hex .hex-inner p {
     margin: 0;
     font-size: 0.95rem;
-    color: white;
+    color: rgb(239, 239, 239);
     white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
   /* Układ heksów */
@@ -234,6 +311,44 @@
     width: 100%;
     max-width: 100%;
   }
+.loxone-intro h2 {
+    font-size: 30px;
+    color: #32ba4b; /* kolor bazowy tekstu */
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center; /* na wszelki wypadek centrowanie */
+    width: 100%; /* aby efekt obejmował całą szerokość nagłówka */
+}
+
+.loxone-intro h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%; /* start poza lewą krawędzią */
+    width: 50%; /* szerokość połysku */
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -50%; /* start poza lewą krawędzią */
+    }
+    50% {
+        left: 50%; /* środek nagłówka */
+    }
+    100% {
+        left: 100%; /* koniec po prawej */
+    }
+}
 
   </style>
 </head>
@@ -259,7 +374,7 @@
   </section>
   <hr style="border: 1px solid #cbcbcb;">
   <section class="loxone-hex-section">
-  <h2>Co zyskujesz dzięki Loxone?</h2>
+  <h2 style="font-size: 30px;">Zobacz możliwości loxone:</h2>
 
   
   <div class="honeycomb">
@@ -273,14 +388,14 @@
     <a class="hex access" href="aplikacja.html">
       <div class="hex-inner">
         <img style="width: 35px; height:auto" src="images/phone-icon.png" alt="Access">
-        <p>Aplikacja <br> Ochrona</p>
+        <p>Aplikacja <br> Dostęp</p>
       </div>
     </a>
 
     <a class="hex security" href="ochrona.html">
       <div class="hex-inner">
         <img src="images/lock-icon.png" alt="Security">
-        <p>Ochrona</p>
+        <p style="font-size: 11px;">Bezpieczeństwo</p>
       </div>
     </a>
 
@@ -313,6 +428,7 @@
     </a>
   </div>
 </section>
+<hr style="border: 1px solid #c2c2c2; margin-top:40px; margin-bottom:40px;">
 
   <!-- ======================================== -->
   <!-- SEKCJA KARUZELI URZĄDZEŃ LOXONE -->
@@ -444,7 +560,7 @@
   </script>
 
   <section class="why-us">
-    <h2>Kompleksowa realizacja InstalSmart</h2>
+    <h2 style="color: #2fae46;">Kompleksowa realizacja InstalSmart</h2>
     <p>Od projektu po uruchomienie — wszystko pod naszą kontrolą.</p>
     <ul>
       <li>Pełny nadzór prac</li>
