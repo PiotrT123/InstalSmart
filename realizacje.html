@@ -32,16 +32,17 @@
     /* Galeria responsywna */
     .gallery {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       gap: 20px;
       margin-top: 20px;
     }
 
     .gallery img {
-      width: 80%;
-      max-width: 600px;
-      height: auto;
+      width: 40%;
+      height: 550px; /* np. 350px – dopasuj jak Ci pasuje */
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0px 0px 8px rgba(212, 212, 212, 0.88);
       cursor: pointer;
@@ -105,6 +106,10 @@
       .btn {
         padding: 8px 16px;
       }
+      .gallery img {
+        width: 45%;
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -126,14 +131,15 @@
   <!-- Główna zawartość -->
   <main class="main-content container">
     <section class="service-details" style="text-align: center;">
-      <h2>Galeria projektów</h2>
+      <h2>Galeria projektów</h2><br>
       <div class="gallery">
-        <img src="images/realizacja1.jpg" alt="Realizacja 1" onclick="openModal(this)">
-        <img src="images/realizacja2.avif" alt="Realizacja 2" onclick="openModal(this)">
-        <img src="images/realizacja3.jpg" alt="Realizacja 3" onclick="openModal(this)">
-        <img src="images/realizacja4.jpg" alt="Realizacja 4" onclick="openModal(this)">
-        <img src="images/realizacja5.jpg" alt="Realizacja 5" onclick="openModal(this)">
-        <img src="images/realizacja6.jpg" alt="Realizacja 6" onclick="openModal(this)">
+        <img src="images/real3.jpg" alt="Realizacja 1" onclick="openModal(this)">
+        <img src="images/real12.jpg" alt="Realizacja 2" onclick="openModal(this)">
+        <img src="images/real2.jpg" alt="Realizacja 3" onclick="openModal(this)">
+        <img src="images/real9.jpg" alt="Realizacja 5" onclick="openModal(this)">
+        <img src="images/real1.jpg" alt="Realizacja 6" onclick="openModal(this)">
+        <img src="images/real5.jpg" alt="Realizacja 4" onclick="openModal(this)">
+        <img src="images/real8.jpg" alt="Realizacja 7" onclick="openModal(this)">
       </div>
     </section>
 

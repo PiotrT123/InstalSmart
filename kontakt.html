@@ -53,6 +53,7 @@
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 15px;
+  max-width: 1000px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
   flex: 1 1 45%;
@@ -61,9 +62,6 @@
   gap: 15px; /* odstęp między polami */
 }
 
-.contact-form:hover {
-  transform: translateY(-5px);
-}
 
 .contact-form label {
   display: flex;
@@ -89,6 +87,10 @@
   box-shadow: 0 0 8px rgba(0, 95, 163, 0.2);
   outline: none;
 }
+.contact-form textarea {
+  max-width: 940px;
+  min-width: 340px;
+}
 
 .contact-form button {
   background: linear-gradient(135deg, #0077cc, #005fa3);
@@ -110,9 +112,8 @@
 
 /* Obrazek kontaktowy */
 .contact-image {
-  flex: 1 1 45%;
-  width: 100%;
-  max-width: 500px;
+  width: 400px;      /* ZMNIEJSZONE */
+  max-width: 400px;  /* blokuje zwiększanie */
   height: auto;
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
@@ -167,14 +168,32 @@
   }
 
   .contact-image {
-    margin-top: 20px;
+    flex: 1 1 45%;
+    width: 100%;
+    max-width: 500px;
   }
+
+}
+@media (max-width: 880px) {
+  .contact-form textarea {
+    max-width: 1200px;
+    min-width: 370px;
+  }
+  .contact-image {
+    width: 300px;
+    max-width: 300px;
+  }
+  
 }
 
 @media (max-width: 768px) {
   .main-content {
     top: -40px;
     padding: 30px 20px;
+  }
+  .contact-form textarea {
+    max-width: 300px;
+    min-width: 370px;
   }
 }
 .hero {
@@ -189,6 +208,12 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.585); /* 0.3 = lekkie przyciemnienie */
   pointer-events: none; /* żeby overlay nie blokowało przycisków i linków */
+}
+@media (max-width: 428px) {
+.contact-form textarea {
+  max-width: 300px;
+  min-width: 240px;
+}
 }
   </style>
 </head>
@@ -206,7 +231,7 @@
 
   <main class="main-content container">
     <section class="service-details">
-      <h2>Formularz kontaktowy</h2>
+      <h2>Formularz kontaktowy</h2><br>
       <div class="contact-wrapper">
         <form class="contact-form" action="mailto:piotrtargosz15@gmail.com" method="post" enctype="text/plain">
           <label>
@@ -227,7 +252,7 @@
           </label><br>
           <button type="submit" class="btn">Wyślij</button>
         </form>
-        <img src="images/kontakt.jpg" alt="Kontakt z InstalSmart zdjęcie" class="contact-image">
+        <img src="images/PiotrTargosz.jpg" alt="Kontakt z InstalSmart zdjęcie" class="contact-image">
       </div>
     </section>
 
