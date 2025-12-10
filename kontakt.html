@@ -233,25 +233,42 @@
     <section class="service-details">
       <h2>Formularz kontaktowy</h2><br>
       <div class="contact-wrapper">
-        <form class="contact-form" action="mailto:piotrtargosz15@gmail.com?subject=Wiadomość%20z%20formularza%20kontaktowego%20InstalSmart" method="post" enctype="text/plain">
-        <label>
-          Imię i nazwisko:
-          <input type="text" name="Imię i Nazwisko " required>
-        </label><br>
-        <label>
-          Email:
-          <input type="email" name="Email " required>
-        </label>
-        <label><br>
-          Telefon:
-          <input type="tel" name="Numer telefonu " required>
-        </label>
-        <label>
-          Wiadomość:
-          <textarea name="Wiadomość " rows="6" required></textarea>
-        </label><br>
-        <button type="submit" class="btn">Wyślij</button>
-      </form>
+        <form class="contact-form" 
+              action="https://formspree.io/f/movgkyyz" 
+              method="POST" id="myForm">
+
+            <label>Imię i nazwisko:
+              <input type="text" name="Imię i nazwisko" required>
+            </label>
+            <label>Email:
+              <input type="email" name="Email" required>
+            </label>
+            <label>Telefon:
+              <input type="tel" name="Numer telefonu" required>
+            </label>
+            <label>Wiadomość:
+              <textarea name="Wiadomość" rows="6" required></textarea>
+            </label>
+            <button type="submit" class="btn">Wyślij</button>
+        </form>
+
+        <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Zatrzymuje domyślne wysłanie
+            const form = e.target;
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '/dziekujemy.html'; // Twój plik lokalny
+                } else {
+                    alert("Coś poszło nie tak. Spróbuj ponownie.");
+                }
+            });
+        });
+        </script>
         <img src="images/PiotrTargosz.jpg" alt="Kontakt z InstalSmart zdjęcie" class="contact-image">
       </div>
     </section>
