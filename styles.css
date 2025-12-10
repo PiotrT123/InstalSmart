@@ -298,13 +298,13 @@ body {
   text-align: center;
 }
 h2 {
-  margin-top: 20px; /* większy margines nad nagłówkiem */
-  text-shadow: 2px 2px 2px rgba(179, 179, 179, 0.6); /* lekki cień tekstu w jasnoszarym kolorze */
+  margin-top: 20px; 
+  text-shadow: 2px 2px 2px rgba(179, 179, 179, 0.6); 
 }
 @media (max-width: 768px) {
   .hero { 
-    height: auto; /* zamiast 40vh, dopasuje wysokość do treści */
-    padding: 40px 20px; /* da miejsce na przycisk */
+    height: auto; 
+    padding: 40px 20px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -320,7 +320,7 @@ h2 {
   .hero-content p { font-size: 15px; margin-bottom: 20px; }
 
   .btn {
-    display: inline-block; /* upewnia się, że przycisk nie jest ukryty */
+    display: inline-block; 
   }
 }
 .feature-item {
@@ -345,17 +345,17 @@ h2 {
   flex-shrink: 0;
 }
 .card {
-  position: relative; /* potrzebne do absolutnego pozycjonowania linku */
+  position: relative; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-bottom: 60px; /* zostaw miejsce na link u dołu */
+  padding-bottom: 60px;
 }
 
 .card-link {
   position: absolute;
-  bottom: 20px; /* odległość od dołu kafelka */
-  left: 13%;    /* odległość od lewej */
+  bottom: 20px;
+  left: 13%;    
   text-decoration: none;
   font-weight: bold;
   color: var(--accent);
@@ -372,14 +372,14 @@ h2 {
   background: linear-gradient(-20deg, #0fa6fe 0%, #a8e063 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* dla nowoczesnych przeglądarek */
+  background-clip: text; 
 }
 #loxonene:hover {
   color: #25bf3f;
 
 }
 .review-cta {
-  background-color: #f5f7fa; /* jasne tło, różne od hero */
+  background-color: #f5f7fa;
   text-align: center;
   padding: 40px 20px;
   border-radius: 12px;
@@ -400,7 +400,7 @@ h2 {
 }
 
 .review-cta .review-btn {
-  background-color: #1176c3; /* pomarańczowy przycisk pasujący do reszty */
+  background-color: #1176c3;
   color: #fff;
   padding: 12px 30px;
   font-size: 1rem;
@@ -448,11 +448,11 @@ h2 {
   text-align: center;
   padding: 20px;
 }
-/* Grupa: logo + nazwa firmy + przyciski menu */
+
 .brand-nav-group {
   display: flex;
   align-items: center;
-  gap: 25px; /* odstęp między logo a przyciskami */
+  gap: 25px; 
 }
 
 /* Przyciski menu – subtelne */
@@ -499,7 +499,7 @@ h2 {
 .right-group {
   display: flex;
   align-items: center;
-  gap: 20px; /* odstęp między menu a FB */
+  gap: 20px; 
 }
 .header {
   background: #fff;
@@ -551,7 +551,7 @@ h2 {
   transition: 0.25s;
 }
 
-/* Standardowy hover (niebieski) */
+
 .nav a:hover {
   background: #e7f1ff;
   border-color: rgba(0, 89, 255, 0.25);
@@ -559,7 +559,7 @@ h2 {
   box-shadow: 0 3px 12px rgba(0, 79, 255, 0.25);
 }
 
-/* Zielony hover tylko dla LOXONE */
+
 #loxonene:hover {
   background: #e6ffe9 !important;
   border-color: #2f9e44 !important;
@@ -588,21 +588,21 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* FB icon hover */
+
 .facebook-link:hover svg {
   opacity: 0.7;
 }
 
-/* ===== HAMBURGER (jeśli używasz JS) ===== */
+
 
 .hamburger {
   display: none;
 }
 
 .mobile-menu {
-  display: none; /* domyślnie ukryte */
+  display: none; 
   position: absolute;
-  top: 60px; /* pod headerem */
+  top: 60px; 
   right: 20px;
   background: white;
   border-radius: 10px;
@@ -638,9 +638,9 @@ h2 {
   transform: translateY(-2px);
 }
 .mobile-menu a#loxonene:hover {
-  background: #e6ffe9 !important;       /* zielone tło jak w desktop */
-  border-color: #2f9e44 !important;     /* zielona ramka */
-  color: #2f9e44 !important;            /* zielony tekst */
+  background: #e6ffe9 !important;       
+  border-color: #2f9e44 !important;   
+  color: #2f9e44 !important;            
   box-shadow: 0 3px 12px rgba(47, 158, 68, 0.25) !important;
   transform: translateY(-2px);
 }
@@ -664,21 +664,21 @@ h2 {
 }
 @media (max-width: 1100px) and (min-width: 601px) {
   .header-inner {
-    flex-direction: column; /* ustawienie logo i menu w kolumnie */
-    align-items: center;    /* wyśrodkowanie */
+    flex-direction: column; 
+    align-items: center;   
   }
 
   .brand-nav-group {
-    flex-direction: column; /* logo i menu w kolumnie */
+    flex-direction: column; 
     align-items: center;
-    gap: 15px;              /* odstęp między logo a menu */
+    gap: 15px;           
   }
 
   .nav {
     display: flex;
-    flex-wrap: wrap;       /* w razie większej liczby linków */
+    flex-wrap: wrap;      
     justify-content: center;
-    gap: 10px;             /* odstęp między linkami */
+    gap: 10px;          
   }
 }
 .services .grid {
@@ -696,20 +696,20 @@ h2 {
 .services .card {
   display: flex;
   flex-direction: column;
-  height: 100%; /* wymusza jednakową wysokość karty */
+  height: 100%; 
 }
 
 .services .card img {
-  height: 180px;      /* stała wysokość obrazka */
+  height: 180px;     
   width: 100%;
-  object-fit: cover;  /* przycina obraz do ramki */
+  object-fit: cover; 
   display: block;
   border-radius: 8px 8px 0 0;
 }
 
 .services .card h3, 
 .services .card p {
-  flex-shrink: 0; /* zapobiega kurczeniu się tekstu */
+  flex-shrink: 0; 
 }
 
 /* Dla ekranów mobilnych */
@@ -725,9 +725,9 @@ h2 {
 }
 @media (max-width: 600px) {
   .nav {
-    display: none !important; /* wymusza ukrycie menu */
+    display: none !important; 
   }
   .hamburger {
-    display: block !important; /* pokazuje hamburger */
+    display: block !important;
   }
 }

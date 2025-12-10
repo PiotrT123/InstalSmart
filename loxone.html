@@ -7,9 +7,9 @@
   <meta name="description" content="InstalSmart — projektujemy i integrujemy systemy Loxone. Kompleksowy nadzór prac, instalacje Miniserver, Audioserver i pełna automatyka domu." />
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo-favicon.ico" type="image/x-icon">
-  <!-- Lokalne style tylko dla podstrony -->
+
   <style>
-  /* --- HERO --- */
+
   .loxone-hero {
     position: relative;
     height: 60vh;
@@ -53,7 +53,6 @@
     background: #3b8e3b;
   }
 
-  /* --- Sekcja urządzeń Loxone --- */
   .loxone-devices {
     text-align: center;
     padding: 60px 0;
@@ -142,7 +141,7 @@
     }
   }
 
-  /* --- Sekcja plaster miodu --- */
+  
   .loxone-hex-section {
     display: flex;
     flex-direction: column;
@@ -190,7 +189,6 @@
     overflow: hidden;
   }
 
-  /* Efekt połyskujących krawędzi */
   .hex::before {
     content: '';
     position: absolute;
@@ -210,8 +208,6 @@
     opacity: 0.7;
     filter: blur(0.5px);
   }
-
-  /* Efekt 3D - krawędzie boczne */
   .hex::after {
     content: '';
     position: absolute;
@@ -293,7 +289,7 @@
     letter-spacing: 0.5px;
   }
 
-  /* Układ heksów */
+
   .hex.lighting { top: 0; left: 220px; }
   .hex.access { top: 65px; left: 110px; }
   .hex.energy.center { top: 130px; left: 220px; }
@@ -302,13 +298,13 @@
   .hex.climate { top: 195px; left: 330px; }
   .hex.audio { top: 258px; left: 220px; }
 
-  /* Responsywność honeycomb */
+
   @media (max-width: 900px) { .honeycomb { transform: scale(0.85); } }
   @media (max-width: 700px) { .honeycomb { transform: scale(0.7); } }
   @media (max-width: 500px) { .honeycomb { transform: scale(0.55); } }
   @media (max-width: 380px) { .honeycomb { transform: scale(0.48); } }
 
-  /* --- Zabezpieczenie przewijania poziomego --- */
+
   html, body {
     overflow-x: hidden;
     width: 100%;
@@ -316,20 +312,20 @@
   }
 .loxone-intro h2 {
     font-size: 30px;
-    color: #13ad32; /* kolor bazowy tekstu */
+    color: #13ad32; 
     position: relative;
     display: inline-block;
     overflow: hidden;
-    text-align: center; /* na wszelki wypadek centrowanie */
-    width: 100%; /* aby efekt obejmował całą szerokość nagłówka */
+    text-align: center; 
+    width: 100%; 
 }
 
 .loxone-intro h2::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -50%; /* start poza lewą krawędzią */
-    width: 50%; /* szerokość połysku */
+    left: -50%; 
+    width: 50%; 
     height: 100%;
     background: linear-gradient(
         120deg,
@@ -343,13 +339,13 @@
 
 @keyframes shine {
     0% {
-        left: -50%; /* start poza lewą krawędzią */
+        left: -50%; 
     }
     50% {
-        left: 50%; /* środek nagłówka */
+        left: 50%; 
     }
     100% {
-        left: 100%; /* koniec po prawej */
+        left: 100%; 
     }
 }
 
@@ -434,9 +430,7 @@
 <p class="select-hex" style="text-align: center; color:#474747; text-shadow: 1px 1px 1px rgb(173, 173, 173)">Wybierz co Cię interesuje</p>
 <hr style="border: 1px solid #c2c2c2; margin-top:40px; margin-bottom:40px;">
 
-  <!-- ======================================== -->
-  <!-- SEKCJA KARUZELI URZĄDZEŃ LOXONE -->
-  <!-- ======================================== -->
+
   <section class="loxone-devices">
     <h2>Najważniejsze urządzenia Loxone</h2>
 
@@ -523,7 +517,7 @@
     nextBtn.addEventListener('click', nextCard);
     prevBtn.addEventListener('click', prevCard);
 
-    // Auto przewijanie
+ 
     function startAuto() {
       autoScroll = setInterval(nextCard, 4000);
     }
@@ -535,7 +529,7 @@
     carousel.addEventListener('mouseenter', stopAuto);
     carousel.addEventListener('mouseleave', startAuto);
 
-    // Swipe (dotyk)
+ 
     let startX = 0;
     let isDragging = false;
 
@@ -583,7 +577,7 @@
 
   <div id="site-footer" class="footer-placeholder"></div>
 
-  <!-- Styl lokalny tylko dla karuzeli -->
+
   <style>
     .loxone-devices {
       font-family: "Segoe UI", sans-serif;

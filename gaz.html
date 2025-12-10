@@ -80,30 +80,30 @@
       gap: 20px;
     }
 
-  /* Media query dla małych ekranów */
+  
     @media (max-width: 768px) {
       .mode-block {
-        grid-template-columns: 1fr; /* jedna kolumna */
-        text-align: center; /* wyśrodkowanie tekstu i obrazka */
+        grid-template-columns: 1fr; 
+        text-align: center; 
       }
       .mode-block .mode-text {
-        order: 1; /* tekst na górze */
+        order: 1; 
       }
       .mode-block .mode-image {
-        order: 2; /* obrazek pod tekstem */
+        order: 2; 
       }
     }
   .main-content {
-    margin-top: -40px; /* nachodzi na hero na dużych ekranach */
+    margin-top: -40px; 
     position: relative;
     z-index: 1;
   }
 
-  /* Media query dla małych ekranów */
+
   @media (max-width: 768px) {
     .main-content {
-      margin-top: -70px; /* mniejsze nachodzenie, ale nadal jest nałożone */
-      padding: 0 15px;   /* opcjonalnie trochę paddingu od boków */
+      margin-top: -70px; 
+      padding: 0 15px;   
     }
     .service-details{
       padding: 6px;

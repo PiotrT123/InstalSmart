@@ -52,7 +52,7 @@
       .feature-detail .image-content, .mode-block .mode-image { order:1; margin-top:20px; }
       .mode-block .mode-text { text-align:center; }
     }
-    /* Efekty tła dla kafelków z obrazkami */
+    
 .feature-card {
   position: relative;
   background-size: cover;
@@ -62,7 +62,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ciemna nakładka, żeby tekst był czytelny */
 .feature-card::before {
   content: "";
   position: absolute;
@@ -71,14 +70,13 @@
   z-index: 0;
 }
 
-/* Treść ponad nakładką */
 .feature-card h4, .feature-card p {
   position: relative;
   z-index: 1;
   color: #fff;
 }
 
-/* Lekki efekt po najechaniu */
+
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.15);
@@ -86,7 +84,7 @@
 .main-content {
   position: relative;
   z-index: 2;
-  margin-top: -40px; /* dostosuj np. -80px lub -120px jeśli chcesz mocniejsze nachodzenie */
+  margin-top: -40px; 
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgb(194, 194, 194);
   padding: 40px 20px;
@@ -140,7 +138,7 @@
   height: 45px !important;
 }
 
-/* MENU */
+
 #site-header .nav a {
   padding: 5px 14px !important;
   font-size: 16px !important;
@@ -148,7 +146,7 @@
   font-weight: 500;
 }
 
-/* META */
+
 #site-header .header-meta {
   gap: 18px !important;
 }
@@ -157,7 +155,7 @@
   font-size: 15px !important;
 }
 
-/* MOBILE */
+
 @media (max-width: 600px) {
   #site-header .nav { display: none !important; }
   #site-header .hamburger { display: block !important; }
@@ -198,7 +196,7 @@
 
 <main class="main-content container">
 
-  <!-- Sekcja o aplikacji -->
+
   <section class="feature-detail" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 30px;">
     <div class="text-content">
       <p>Nasza aplikacja to centrum sterowania całym domem — od multimediów po zarządzanie energią i bezpieczeństwo. Zaprojektowana tak, by każdy użytkownik miał szybki dostęp do najważniejszych funkcji, a zaawansowani użytkownicy — pełną kontrolę nad regułami i automatyzacjami.</p>
@@ -302,7 +300,7 @@ To inteligentny system, który myśli za Ciebie i zapewnia codzienny komfort bez
     <p>System oferuje szyfrowane połączenia, kontrolę uprawnień i możliwość lokalnej pracy bez chmury — decyzja o sposobie wdrożenia należy do Ciebie.</p>
   </section>
 
-  <!-- NOWA SEKCJA O DOSTĘPIE -->
+
   <hr>
   <section style="margin-bottom:30px;">
     <h3>Inteligentny dostęp — kontrola drzwi i wejść</h3>
@@ -332,7 +330,7 @@ To inteligentny system, który myśli za Ciebie i zapewnia codzienny komfort bez
     <p style="color:gray; margin-top:12px;"><strong>Wskazówka:</strong> W systemach wielolokalizacyjnych aktywuj funkcję Loxone Trust – ułatwia zarządzanie dostępem i eliminuje konieczność używania wielu kart lub tagów.</p>
   </section>
 
-  <!-- CTA -->
+
   <section class="cta">
     <h2>Chcesz pełną kontrolę?</h2>
     <p>Zaprojektujemy i wdrożymy aplikację dopasowaną do Twoich potrzeb — od prostych scen po zaawansowane, uczące się reguły automatyzacji.</p>
