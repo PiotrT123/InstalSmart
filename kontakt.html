@@ -234,7 +234,7 @@
       <h2>Formularz kontaktowy</h2><br>
       <div class="contact-wrapper">
         <form class="contact-form" 
-              action="https://formspree.io/f/movgkyyz" 
+              action="https://formspree.io/f/mldqpaqw" 
               method="POST" id="myForm">
 
             <label>Imię i nazwisko:
@@ -254,7 +254,7 @@
 
         <script>
         document.getElementById('myForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Zatrzymuje domyślne wysłanie
+            e.preventDefault(); 
             const form = e.target;
             fetch(form.action, {
                 method: form.method,
@@ -262,7 +262,7 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    window.location.href = '/dziekujemy.html'; // Twój plik lokalny
+                    window.location.href = '/dziekujemy.html'; 
                 } else {
                     alert("Coś poszło nie tak. Spróbuj ponownie.");
                 }
