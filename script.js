@@ -8,7 +8,7 @@
       <div class="brand-nav-group">
         <a href="index.html" class="brand">
           <img src="images/logo.png" alt="" class="logo">
-          <span>InstalSmart</span>
+          <span>INSTALSMART</span>
         </a>
 
         <nav class="nav">
@@ -60,7 +60,7 @@
   // ===== FOOTER HTML =====
 const footerHTML = `
   <div class="container">
-    <p>© ${new Date().getFullYear()} InstalSmart — Wszystkie prawa zastrzeżone</p>
+    <p>© ${new Date().getFullYear()} INSTALSMART — Wszystkie prawa zastrzeżone</p>
     <p class="muted">Mucharz 414 34-106 • NIP - 5512668896 • tel. +48 535 150 597</p>
   </div>`;
 
