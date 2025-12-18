@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator automatyki</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f6f6;
+}
+.kalkulator {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+}
+.sekcja {
+    margin-bottom: 30px;
+}
+.sekcja h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+.pozycja {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px dotted #ddd;
+}
+.pozycja input {
+    width: 80px;
+    padding: 5px;
+}
+.podsumowanie {
+    background: #efefef;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="kalkulator">
+<h1>Konfigurator sterowania automatyką</h1>
+
+<div id="formularz"></div>
+
+<div class="podsumowanie">
+Łączna ilość punktów: <span id="suma">0</span>
+</div>
+</div>
+
+<script>
+const dane = [
+{
+    sekcja: "OŚWIETLENIE",
+    pozycje: [
+        "oprawy oświetleniowe (grupy oświetleniowe) – włącz/wyłącz",
+        "oprawy oświetleniowe ściemnialne – (fazowe) 230V",
+        "oprawy oświetleniowe DALI ściemnialne",
+        "paski ledowe włącz/wyłącz",
+        "paski ledowe zmiennocieplne CCT",
+        "paski ledowe kolorowe / biały",
+        "paski ledowe RGBW",
+        "oświetlenie Loxone"
+    ]
+},
+{
+    sekcja: "OGRZEWANIE",
+    pozycje: [
+        "strefy ogrzewania podłogowego",
+        "grzejniki",
+        "pompa ciepła",
+        "kocioł gazowy"
+    ]
+},
+{
+    sekcja: "ROLETY / ŻALUZJE",
+    pozycje: [
+        "rolety elektryczne",
+        "żaluzje fasadowe",
+        "markizy"
+    ]
+}
+];
+
+const formularz = document.getElementById("formularz");
+
+dane.forEach((blok, i) => {
+    const sekcja = document.createElement("div");
+    sekcja.className = "sekcja";
+    sekcja.innerHTML = `<h2>${blok.sekcja}</h2>`;
+
+    blok.pozycje.forEach((nazwa, j) => {
+        sekcja.innerHTML += `
+            <div class="pozycja">
+                <span>${nazwa}</span>
+                <input type="number" min="0" value="0" class="ilosc">
+            </div>
+        `;
+    });
+
+    formularz.appendChild(sekcja);
+});
+
+function przelicz() {
+    let suma = 0;
+    document.querySelectorAll(".ilosc").forEach(el => {
+        suma += Number(el.value || 0);
+    });
+    document.getElementById("suma").innerText = suma;
+}
+
+document.addEventListener("input", przelicz);
+</script>
+
+</body>
+</html>
