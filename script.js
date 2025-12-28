@@ -8,11 +8,11 @@
       <div class="brand-nav-group">
         <a href="/" class="brand">
           <img src="images/logo.png" alt="" class="logo">
-          <span>INSTaLSMART</span>
+          <span>INSTALSMART</span>
         </a>
 
         <nav class="nav">
-          <a href="index.html">Strona główna</a>
+          <a href="/">Strona główna</a>
           <a id="loxonene" href="loxone.html">Loxone</a>
           <a href="wod-kan.html">WOD-KAN</a>
           <a href="gaz.html">GAZ</a>
@@ -46,7 +46,7 @@
 
     <!-- MENU MOBILE -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Strona główna</a>
+      <a href="/">Strona główna</a>
       <a id="loxonene" href="loxone.html">Loxone</a>
       <a href="wod-kan.html">WOD-KAN</a>
       <a href="gaz.html">GAZ</a>
