@@ -8,7 +8,7 @@
       <div class="brand-nav-group">
         <a href="/" class="brand">
           <img src="images/logo.png" alt="" class="logo">
-          <span>INSTALSMART</span>
+          <span>INSTaLSMART</span>
         </a>
 
         <nav class="nav">
