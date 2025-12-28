@@ -6,7 +6,7 @@
     <div class="header-inner container">
 
       <div class="brand-nav-group">
-        <a href="index.html" class="brand">
+        <a href="/" class="brand">
           <img src="images/logo.png" alt="" class="logo">
           <span>INSTALSMART</span>
         </a>
