@@ -27,8 +27,8 @@
         <a href="https://www.google.com/maps?q=Mucharz+414+34-106" target="_blank" rel="noopener" class="meta-link">
           📍 Mucharz 414
         </a>
-        <a href="mailto:piotrtargosz15@gmail.com" class="meta-link">
-          ✉️ piotrtargosz15@gmail.com
+        <a href="mailto:biuro@instalsmart.net" class="meta-link">
+          ✉️ biuro@instalsmart.net
         </a>
         <a href="https://m.facebook.com/profile.php?id=61571637170536" target="_blank" rel="noopener" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
